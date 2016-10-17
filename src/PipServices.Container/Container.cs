@@ -33,7 +33,7 @@ namespace PipServices.Container
             Config = ContainerConfigReader.ReadFromFile(correlationId, path);
         }
 
-        protected void InitReferences(IReferences references)
+        protected virtual void InitReferences(IReferences references)
         {
             // Override in base classes
             references.Put(new DefaultContainerFactory());

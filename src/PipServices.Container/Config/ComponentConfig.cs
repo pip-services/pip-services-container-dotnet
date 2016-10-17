@@ -6,17 +6,14 @@ namespace PipServices.Container.Config
 {
     public sealed class ComponentConfig
     {
-        private Descriptor _descriptor;
-        private ConfigParams _config;
-
         public ComponentConfig()
         {
         }
 
         public ComponentConfig(Descriptor descriptor, ConfigParams config)
         {
-            _descriptor = descriptor;
-            _config = config;
+            Descriptor = descriptor;
+            Config = config;
         }
 
         public Descriptor Descriptor { get; set; }

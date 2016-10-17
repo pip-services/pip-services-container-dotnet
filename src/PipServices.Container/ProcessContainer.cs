@@ -80,7 +80,7 @@ namespace PipServices.Container
             return RunAsync(correlationId, token);
         }
 
-        public Task RunWithConfigFile(string correlationId, string[] args, string defaultPath, CancellationToken token)
+        public Task RunWithConfigFileAsync(string correlationId, string[] args, string defaultPath, CancellationToken token)
         {
             ReadConfigFromFile(correlationId, args, defaultPath);
             return RunAsync(correlationId, token);

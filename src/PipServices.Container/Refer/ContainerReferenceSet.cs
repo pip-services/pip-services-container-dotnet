@@ -58,7 +58,7 @@ namespace PipServices.Container.Refer
 
             // Add to the list
             if (component != null)
-                Put(locator, component);
+                Put(component, locator);
 
             // Reference with other components
             var referenceable = component as IReferenceable;
@@ -102,7 +102,7 @@ namespace PipServices.Container.Refer
                     if (component is ILocateable || component is IDescriptable)
                         Put(component);
                     else
-                        Put(locator, component);
+                        Put(component, locator);
 
                     // Configure component
                     var configurable = component as IConfigurable;

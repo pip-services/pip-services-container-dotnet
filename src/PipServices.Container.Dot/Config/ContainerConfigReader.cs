@@ -1,4 +1,5 @@
-﻿using PipServices.Commons.Config;
+﻿using System.IO;
+using PipServices.Commons.Config;
 using PipServices.Commons.Errors;
 
 namespace PipServices.Container.Config
@@ -11,8 +12,7 @@ namespace PipServices.Container.Config
             if (path == null)
                 throw new ConfigException(correlationId, "NO_PATH", "Missing config file path");
 
-            var index = path.LastIndexOf('.');
-            var ext = index > 0 ? path.Substring(index + 1).ToLower() : "";
+            var ext = Path.GetExtension(path);
 
             if (ext.Equals("json"))
                 return ReadFromJsonFile(correlationId, path);

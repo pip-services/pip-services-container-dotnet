@@ -2,9 +2,7 @@
 using Xunit;
 using PipServices.Container.Info;
 using PipServices.Container.Config;
-using PipServices.Commons.Refer;
 using PipServices.Commons.Config;
-using PipServices.Commons.Errors;
 
 namespace PipServices.Container.Test.Info
 {

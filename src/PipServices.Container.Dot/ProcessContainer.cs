@@ -9,6 +9,7 @@ namespace PipServices.Container
     public class ProcessContainer : Container
     {
         private readonly SemaphoreSlim _exitEvent = new SemaphoreSlim(0);
+        private string _correlationId;
 
         public void ReadConfigFromFile(string correlationId, string[] args, string defaultPath)
         {
@@ -17,16 +18,16 @@ namespace PipServices.Container
             ReadConfigFromFile(correlationId, path);
         }
 
-        //public void UncaughtException(Thread thread, Exception ex)
-        //{
-        //    Logger.Fatal(correlationId, ex, "Process is terminated");
-
-        //    _exitEvent.Release();
-        //}
-
-        private void CaptureErrors(string correlationId)
+        private void CaptureErrors()
         {
-            //Thread.SetDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler());
+            AppDomain.CurrentDomain.UnhandledException += HandleUncaughtException;
+        }
+
+        private void HandleUncaughtException(object sender, UnhandledExceptionEventArgs args)
+        {
+            Logger.Fatal(_correlationId, (Exception)args.ExceptionObject, "Process is terminated");
+
+            _exitEvent.Release();
         }
 
         private void CaptureExit(string correlationId)
@@ -61,7 +62,9 @@ namespace PipServices.Container
 
         public async Task RunAsync(string correlationId, CancellationToken token)
         {
-            CaptureErrors(correlationId);
+            _correlationId = correlationId;
+
+            CaptureErrors();
             await StartAsync(correlationId, token);
             CaptureExit(correlationId);
             await StopAsync(correlationId, token);

@@ -1,14 +1,25 @@
-﻿using System.ComponentModel;
-using Xunit;
+﻿using Xunit;
 using PipServices.Container.Config;
 using PipServices.Commons.Refer;
 using PipServices.Commons.Config;
 using PipServices.Commons.Errors;
+using TypeDescriptor = PipServices.Commons.Reflect.TypeDescriptor;
 
 namespace PipServices.Container.Test.Config
 {
     public sealed class ComponentConfigTest
     {
+        [Fact]
+        public void TestType()
+        {
+            var componentConfig = new ComponentConfig();
+            Assert.Null(componentConfig.Type);
+
+            var type = new TypeDescriptor("new name", null);
+            componentConfig.Type = type;
+            Assert.Equal(componentConfig.Type, type);
+        }
+
         [Fact]
         public void TestDescriptor()
         {
@@ -45,7 +56,7 @@ namespace PipServices.Container.Test.Config
             }
             catch (ConfigException e)
             {
-                Assert.Equal(e.Message, "Component configuration must have descriptor or type");
+                Assert.Equal(e.Message, "Component configuration must have descriptor");
             }
 
             config = ConfigParams.FromTuples(
@@ -54,6 +65,7 @@ namespace PipServices.Container.Test.Config
                 "config.key", "key",
                 "config.key2", "key2"
                 );
+
             try
             {
                 componentConfig = ComponentConfig.FromConfig(config);
@@ -63,15 +75,18 @@ namespace PipServices.Container.Test.Config
                 Assert.Equal(e.Message, "Descriptor descriptor_name is in wrong format");
             }
 
-            Descriptor descriptor = new Descriptor("group", "type", "id", "version");
+            var descriptor = new Descriptor("group", "type", "id", "version");
+            var type = new TypeDescriptor("type", null);
             config = ConfigParams.FromTuples(
                 "descriptor", "group:type:id:version",
+                "type", "type",
                 "config.key", "key",
                 "config.key2", "key2"
                 );
             componentConfig = ComponentConfig.FromConfig(config);
 
             Assert.Equal(componentConfig.Descriptor, descriptor);
+            Assert.Equal(componentConfig.Type, type);
         }
     }
 }

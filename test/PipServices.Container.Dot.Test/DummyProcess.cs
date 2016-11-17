@@ -2,10 +2,6 @@
 using System.Threading;
 using System.Threading.Tasks;
 using PipServices.Commons.Refer;
-using PipServices.Commons.Config;
-using PipServices.Commons.Errors;
-using PipServices.Commons.Log;
-using PipServices.Commons.Run;
 
 namespace PipServices.Container.Test
 {

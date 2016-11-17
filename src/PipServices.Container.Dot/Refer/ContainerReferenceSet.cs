@@ -3,6 +3,7 @@ using System.Linq;
 using PipServices.Commons.Build;
 using PipServices.Commons.Config;
 using PipServices.Commons.Refer;
+using PipServices.Commons.Reflect;
 using PipServices.Container.Config;
 
 namespace PipServices.Container.Refer
@@ -77,13 +78,14 @@ namespace PipServices.Container.Refer
 
                 try
                 {
-                    //// Create component dynamically
-                    //if (componentConfig.GetType() != null)
-                    //{
-                    //    locator = componentConfig.getType();
-                    //    component = TypeReflector.createInstance(componentConfig.getType());
-                    //}
-                    // Or create component statically
+                    // Create component dynamically
+                    if (componentConfig.Type != null)
+                    {
+                        locator = componentConfig.Type;
+                        component = TypeReflector.CreateInstance(componentConfig.Type);
+                    }
+
+                    //Or create component statically
                     if (componentConfig.Descriptor != null)
                     {
                         locator = componentConfig.Descriptor;

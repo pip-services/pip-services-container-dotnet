@@ -14,10 +14,6 @@ namespace PipServices.Container.Info
         private string _name = "unknown";
         private StringValueMap _properties = new StringValueMap();
 
-        public ContainerInfo()
-        {
-        }
-
         public Descriptor GetDescriptor()
         {
             return Descriptor;

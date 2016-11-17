@@ -1,16 +1,12 @@
 ﻿using System;
 using PipServices.Commons.Refer;
-using PipServices.Commons.Config;
-using PipServices.Commons.Errors;
-using PipServices.Commons.Log;
-using PipServices.Commons.Run;
 using PipServices.Commons.Build;
 
 namespace PipServices.Container.Test
 {
     public class DummyFactory : IFactory, IDescriptable
     {
-        public static Descriptor Descriptor { get; } = new Descriptor("pip-services-dummies", "factory", "*", "1.0");
+        public static Descriptor Descriptor { get; } = new Descriptor("pip-services-dummies", "factory", "default", "1.0");
 
         public Descriptor GetDescriptor()
         {

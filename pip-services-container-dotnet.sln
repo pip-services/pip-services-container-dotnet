@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		dummy.yaml = dummy.yaml
 		global.json = global.json
+		PipServices.Container.nuspec = PipServices.Container.nuspec
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{788C3EAB-43A1-4DD9-AB8C-19E72607526C}"

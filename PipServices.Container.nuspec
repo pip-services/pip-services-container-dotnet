@@ -2,11 +2,16 @@
 <package >
   <metadata>
     <id>PipServices.Container</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>PipServices.Container</title>
     <authors>Sergey Seroukhov, Volodymyr Tkachenko</authors>
     <owners>seroukhov</owners>
+
+    <projectUrl>https://github.com/pip-services/pip-services-container-dotnet</projectUrl>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <iconUrl>https://raw.githubusercontent.com/pip-services/pip-services/master/design/Icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+
     <description>General-purpose component container for Pip.Services in .NET</description>
     <releaseNotes>Pre release</releaseNotes>
     <copyright>Digital Living Software Corp. 2016</copyright>
@@ -14,13 +19,13 @@
 
     <dependencies>
       <group targetFramework="net">
-        <dependency id="PipServices.Commons" version="1.0.3" />
+        <dependency id="PipServices.Commons" version="1.0.4" />
       </group>
       <group targetFramework="netstandard">
         <dependency id="NETStandard.Library" version="1.6.0" />
         <dependency id="System.Runtime.Loader" version="4.0.0" />
         <dependency id="System.Threading.Thread" version="4.0.0" />
-        <dependency id="PipServices.Commons" version="1.0.3" />
+        <dependency id="PipServices.Commons" version="1.0.4" />
       </group>
     </dependencies>
   </metadata>

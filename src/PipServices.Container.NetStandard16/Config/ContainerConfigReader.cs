@@ -27,14 +27,12 @@ namespace PipServices.Container.Config
         public static ContainerConfig ReadFromJsonFile(string correlationId, string path)
         {
             var config = JsonConfigReader.ReadConfig(correlationId, path);
-
             return ContainerConfig.FromConfig(config);
         }
 
         public static ContainerConfig ReadFromYamlFile(string correlationId, string path)
         {
             var config = YamlConfigReader.ReadConfig(correlationId, path);
-
             return ContainerConfig.FromConfig(config);
         }
     }

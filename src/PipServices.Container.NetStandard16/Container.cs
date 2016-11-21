@@ -14,20 +14,18 @@ namespace PipServices.Container
 {
     public class Container
     {
-        protected ILogger Logger = new NullLogger();
-        public ContainerInfo Info { get; protected set; } = new ContainerInfo();
-        public ContainerConfig Config { get; set; }
-        public ContainerReferenceSet References { get; protected set; }
-
-        public Container()
-        {
-        }
+        public Container() { }
 
         public Container(ContainerConfig config)
         {
             Config = config;
         }
-        
+
+        protected ILogger Logger = new NullLogger();
+        public ContainerInfo Info { get; protected set; } = new ContainerInfo();
+        public ContainerConfig Config { get; set; }
+        public ContainerReferenceSet References { get; protected set; }
+
         public void ReadConfigFromFile(string correlationId, string path)
         {
             Config = ContainerConfigReader.ReadFromFile(correlationId, path);

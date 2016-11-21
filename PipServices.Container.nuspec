@@ -7,7 +7,7 @@
     <authors>Sergey Seroukhov, Volodymyr Tkachenko</authors>
     <owners>seroukhov</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>IoC container for Pip.Services in .NET</description>
+    <description>General-purpose component container for Pip.Services in .NET</description>
     <releaseNotes>Pre release</releaseNotes>
     <copyright>Digital Living Software Corp. 2016</copyright>
     <tags>pip-services microservices framework</tags>

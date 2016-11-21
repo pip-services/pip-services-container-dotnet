@@ -1,7 +1,11 @@
 {
+  "title": "Unit Tests for Pip.Services Container",
+  "copyright": "Copyright © Digital Living Software Inc. 2009-2016",
+  "description": "Performs unit testing for Pip.Services Container",
   "version": "1.0.0-*",
   "buildOptions": {
-    "emitEntryPoint": true
+    "emitEntryPoint": true,
+    "define": [ "CORE_NET" ]
   },
 
   "dependencies": {

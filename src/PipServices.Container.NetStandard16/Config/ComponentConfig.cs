@@ -7,9 +7,7 @@ namespace PipServices.Container.Config
 {
     public sealed class ComponentConfig
     {
-        public ComponentConfig()
-        {
-        }
+        public ComponentConfig() { }
 
         public ComponentConfig(Descriptor descriptor, TypeDescriptor type, ConfigParams config)
         {

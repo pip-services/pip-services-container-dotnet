@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PipServices.Container.Dot")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("IoC container for Pip.Services")]
+[assembly: AssemblyDescription("General-purpose component container for Pip.Services in .NET")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("EPAM Systems")]
-[assembly: AssemblyProduct("PipServices.Container.Dot")]
-[assembly: AssemblyCopyright("Copyright © EPAM Systems 2016")]
+[assembly: AssemblyCompany("Digital Living Software Inc.")]
+[assembly: AssemblyProduct("Pip.Services")]
+[assembly: AssemblyCopyright("Copyright © Digital Living Software Inc. 2009-2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

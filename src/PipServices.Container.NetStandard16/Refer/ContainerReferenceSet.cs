@@ -48,8 +48,7 @@ namespace PipServices.Container.Refer
             }
             catch (CreateException ex)
             {
-                throw (ReferenceException) new ReferenceException(null, locator)
-                    .WithCause(ex);
+                throw new ReferenceException(null, locator).WithCause(ex);
             }
         }
 
@@ -95,8 +94,7 @@ namespace PipServices.Container.Refer
                     // Check that component was created
                     if (component == null)
                     {
-                        throw (CreateException)
-                            new CreateException("CANNOT_CREATE_COMPONENT", "Cannot create component")
+                        throw new CreateException("CANNOT_CREATE_COMPONENT", "Cannot create component")
                                 .WithDetails("config", config);
                     }
 
@@ -113,8 +111,7 @@ namespace PipServices.Container.Refer
                 }
                 catch (Exception ex)
                 {
-                    throw (ReferenceException) new ReferenceException(null, locator)
-                        .WithCause(ex);
+                    throw new ReferenceException(null, locator).WithCause(ex);
                 }
             }
         }

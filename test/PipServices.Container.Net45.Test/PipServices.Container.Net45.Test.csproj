@@ -8,7 +8,7 @@
     <ProjectGuid>{41174940-002A-4161-9FC0-6DB15A5663CB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PipServices.Container.Test</RootNamespace>
+    <RootNamespace>PipServices.Container</RootNamespace>
     <AssemblyName>PipServices.Container.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

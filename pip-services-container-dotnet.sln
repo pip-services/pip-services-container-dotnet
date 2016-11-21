@@ -14,13 +14,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{788C3EAB-43A1-4DD9-AB8C-19E72607526C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipServices.Container.Net461", "src\PipServices.Container.Net461\PipServices.Container.Net461.csproj", "{70DF5CBE-2479-47FA-9592-9C580F198667}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipServices.Container.Net45", "src\PipServices.Container.Net45\PipServices.Container.Net45.csproj", "{70DF5CBE-2479-47FA-9592-9C580F198667}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PipServices.Container.Netstandard16", "src\PipServices.Container.Netstandard16\PipServices.Container.Netstandard16.xproj", "{FC4ACDC7-A281-4191-8016-B850C1C56EC0}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PipServices.Container.NetStandard10", "src\PipServices.Container.NetStandard10\PipServices.Container.NetStandard10.xproj", "{FC4ACDC7-A281-4191-8016-B850C1C56EC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipServices.Container.Net461.Test", "test\PipServices.Container.Net461.Test\PipServices.Container.Net461.Test.csproj", "{41174940-002A-4161-9FC0-6DB15A5663CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipServices.Container.Net45.Test", "test\PipServices.Container.Net45.Test\PipServices.Container.Net45.Test.csproj", "{41174940-002A-4161-9FC0-6DB15A5663CB}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PipServices.Container.Netstandard16.Test", "test\PipServices.Container.Netstandard16.Test\PipServices.Container.Netstandard16.Test.xproj", "{99C6D605-6E5C-4E23-9DAB-4C6B275BC321}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PipServices.Container.NetStandard10.Test", "test\PipServices.Container.NetStandard10.Test\PipServices.Container.NetStandard10.Test.xproj", "{99C6D605-6E5C-4E23-9DAB-4C6B275BC321}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

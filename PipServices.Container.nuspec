@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>PipServices.Container</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>PipServices.Container</title>
     <authors>Sergey Seroukhov, Volodymyr Tkachenko</authors>
     <owners>seroukhov</owners>
@@ -14,13 +14,13 @@
 
     <dependencies>
       <group targetFramework="net">
-        <dependency id="PipServices.Commons" version="1.0.1" />
+        <dependency id="PipServices.Commons" version="1.0.3" />
       </group>
       <group targetFramework="netstandard">
         <dependency id="NETStandard.Library" version="1.6.0" />
         <dependency id="System.Runtime.Loader" version="4.0.0" />
         <dependency id="System.Threading.Thread" version="4.0.0" />
-        <dependency id="PipServices.Commons" version="1.0.1" />
+        <dependency id="PipServices.Commons" version="1.0.3" />
       </group>
     </dependencies>
   </metadata>

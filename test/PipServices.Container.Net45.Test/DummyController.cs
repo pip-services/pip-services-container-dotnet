@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using PipServices.Commons.Refer;
 using PipServices.Commons.Config;
 using PipServices.Commons.Log;
@@ -31,17 +30,17 @@ namespace PipServices.Container.Test
             _logger.SetReferences(references);
         }
 
-        public Task OpenAsync(string correlationId, CancellationToken token)
+        public Task OpenAsync(string correlationId)
         {
             _timer.Start();
             _logger.Trace(correlationId, "Dummy controller opened");
 
-            return Task.CompletedTask;
+            return Task.Delay(0);
         }
 
-        public async Task CloseAsync(string correlationId, CancellationToken token)
+        public async Task CloseAsync(string correlationId)
         {
-            await _timer.CloseAsync(correlationId, token);
+            await _timer.CloseAsync(correlationId);
 
             _logger.Trace(correlationId, "Dummy controller closed");
         }
@@ -50,7 +49,7 @@ namespace PipServices.Container.Test
         {
             _logger.Info(correlationId, "%d - %s", Counter++, Message);
 
-            return Task.CompletedTask;
+            return Task.Delay(0);
         }
     }
 }

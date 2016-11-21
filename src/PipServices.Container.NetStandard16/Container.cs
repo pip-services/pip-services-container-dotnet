@@ -56,7 +56,7 @@ namespace PipServices.Container
                 // Reference and open components
                 var components = References.GetAll();
                 Referencer.SetReferences(References, components);
-                await Opener.OpenAsync(correlationId, References.GetAll(), token);
+                await Opener.OpenAsync(correlationId, References.GetAll());
 
                 // Get reference to logger
                 Logger = new CompositeLogger(References);
@@ -87,7 +87,7 @@ namespace PipServices.Container
 
                 // Close and deference components
                 var components = References.GetAll();
-                await Closer.CloseAsync(correlationId, components, token);
+                await Closer.CloseAsync(correlationId, components);
                 Referencer.UnsetReferences(components);
 
                 Logger.Info(correlationId, "Container %s stopped", Info.Name);

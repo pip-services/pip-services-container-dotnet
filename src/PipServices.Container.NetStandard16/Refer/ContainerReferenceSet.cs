@@ -82,7 +82,7 @@ namespace PipServices.Container.Refer
                     if (componentConfig.Type != null)
                     {
                         locator = componentConfig.Type;
-                        component = TypeReflector.CreateInstance(componentConfig.Type);
+                        component = TypeReflector.CreateInstanceByDescriptor(componentConfig.Type);
                     }
 
                     // Or create component statically

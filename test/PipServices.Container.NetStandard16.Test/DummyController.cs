@@ -33,7 +33,7 @@ namespace PipServices.Container.Test
             _logger.SetReferences(references);
         }
 
-        public Task OpenAsync(string correlationId, CancellationToken token)
+        public Task OpenAsync(string correlationId)
         {
             _timer.Start();
             _logger.Trace(correlationId, "Dummy controller opened");
@@ -41,9 +41,9 @@ namespace PipServices.Container.Test
             return Task.CompletedTask;
         }
 
-        public async Task CloseAsync(string correlationId, CancellationToken token)
+        public async Task CloseAsync(string correlationId)
         {
-            await _timer.CloseAsync(correlationId, token);
+            await _timer.CloseAsync(correlationId);
 
             _logger.Trace(correlationId, "Dummy controller closed");
         }

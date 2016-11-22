@@ -6,7 +6,7 @@
     <title>PipServices.Container</title>
     <authors>Sergey Seroukhov, Volodymyr Tkachenko</authors>
 
-    <projectUrl>https://github.com/pip-services/pip-services-data-dotnet</projectUrl>
+    <projectUrl>https://github.com/pip-services/pip-services-container-dotnet</projectUrl>
     <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
     <iconUrl>https://raw.githubusercontent.com/pip-services/pip-services/master/design/Icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

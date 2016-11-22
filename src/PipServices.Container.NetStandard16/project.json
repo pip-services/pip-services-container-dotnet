@@ -1,6 +1,10 @@
 {
+  "copyright": "Copyright © Digital Living Software Inc. 2009-2016",
+  "title": "IoC container for Pip.Services",
+  "description": "General-purpose component container for Pip.Services in Core.NET",
   "buildOptions": {
-    "outputName": "PipServices.Container"
+    "outputName": "PipServices.Container",
+    "define": [ "CORE_NET" ]
   },
 
   "version": "1.0.2",

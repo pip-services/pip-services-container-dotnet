@@ -1,63 +1,49 @@
-﻿using System;
-using System.Runtime.Loader;
+﻿using PipServices.Container.Config;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
-using PipServices.Commons.Log;
-using PipServices.Container.Config;
 
 namespace PipServices.Container
 {
     public class ProcessContainer : Container
     {
-        private readonly SemaphoreSlim _exitEvent = new SemaphoreSlim(0);
+        private readonly ManualResetEvent _exitEvent = new ManualResetEvent(false);
+
+        public object AppDomain { get; private set; }
 
         public void ReadConfigFromFile(string correlationId, string[] args, string defaultPath)
         {
             var path = args.Length > 0 ? args [0] : defaultPath;
-
             ReadConfigFromFile(correlationId, path);
         }
 
-        //public void UncaughtException(Thread thread, Exception ex)
-        //{
-        //    Logger.Fatal(correlationId, ex, "Process is terminated");
-
-        //    _exitEvent.Release();
-        //}
-
         private void CaptureErrors(string correlationId)
         {
-            //Thread.SetDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler());
+#if !CORE_NET
+            AppDomain.CurrentDomain.UnhandledException += (obj, e) =>
+            {
+                Logger.Fatal(correlationId, e.ExceptionObject, "Process is terminated");
+                _exitEvent.Set();
+            };
+#endif
         }
 
         private void CaptureExit(string correlationId)
         {
-            Logger.Info(null, "Press Control-C to stop the microservice...");
+            Logger.Info(correlationId, "Press Control-C to stop the microservice...");
 
-            AssemblyLoadContext.Default.Unloading += context => InvokeBatchProcessors(correlationId, Logger, _exitEvent);
+            Console.CancelKeyPress += (sender, eventArgs) =>
+            {
+                Logger.Info(correlationId, "Goodbye!");
+
+                eventArgs.Cancel = true;
+                _exitEvent.Set();
+
+                Environment.Exit(1);
+            };
 
             // Wait and close
-            try
-            {
-                _exitEvent.Wait();
-            }
-            catch (OperationCanceledException)
-            {
-                // Ignore...
-            }
-            catch (ObjectDisposedException)
-            {
-                // Ignore...
-            }
-        }
-
-        private void InvokeBatchProcessors(string correlationId, ILogger logger, SemaphoreSlim exitEvent)
-        {
-            logger.Info(correlationId, "Goodbye!");
-
-            exitEvent.Release();
-
-            //Runtime.getRuntime().exit(1);
+            _exitEvent.WaitOne();
         }
 
         public async Task RunAsync(string correlationId, CancellationToken token)

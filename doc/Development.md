@@ -67,13 +67,13 @@ Update release notes in CHANGELOG. Update version number and release details in 
 After that compile and test the project. Then create a nuget package:
 
 ```bash
-nuget pack PipServices.Commons.nuspec
+nuget pack PipServices.Container.nuspec
 ```
 
 Publish the package on nuget global repository
 
 ```bash
-nuget push PipServices.Commons.nuspec -Source https://www.nuget.org/api/v2/package
+nuget push PipServices.Container.nuspec -Source https://www.nuget.org/api/v2/package
 ```
 
 ## <a name="contrib"></a> Contributing

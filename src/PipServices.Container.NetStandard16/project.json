@@ -3,13 +3,13 @@
     "outputName": "PipServices.Container"
   },
 
-  "version": "1.0.1",
+  "version": "1.0.2",
 
   "dependencies": {
-    "NETStandard.Library": "1.6.0",
-    "PipServices.Commons": "1.0.3",
-    "System.Runtime.Loader": "4.0.0",
-    "System.Threading.Thread": "4.0.0"
+    "NETStandard.Library": "1.6.1",
+    "PipServices.Commons": "1.0.9",
+    "System.Runtime.Loader": "4.3.0",
+    "System.Threading.Thread": "4.3.0"
   },
 
   "frameworks": {

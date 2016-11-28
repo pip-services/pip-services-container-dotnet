@@ -9,7 +9,7 @@ namespace PipServices.Container.Build
 {
     public class DefaultContainerFactory : CompositeFactory
     {
-        public  static Descriptor Descriptor { get; } = new Descriptor("pip-services-container", "factory", "container", "", "1.0");
+        public  static Descriptor Descriptor { get; } = new Descriptor("pip-services-container", "factory", "container", "default", "1.0");
 
         public DefaultContainerFactory()
         {

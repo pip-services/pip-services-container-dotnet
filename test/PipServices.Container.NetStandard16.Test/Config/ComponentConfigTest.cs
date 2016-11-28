@@ -25,7 +25,7 @@ namespace PipServices.Container.Config
             var componentConfig = new ComponentConfig();
             Assert.Null(componentConfig.Descriptor);
 
-            var descriptor = new Descriptor("group", "type", "id", "*", "version");
+            var descriptor = new Descriptor("group", "type", "id", "default", "version");
             componentConfig.Descriptor = descriptor;
             Assert.Equal(componentConfig.Descriptor, descriptor);
         }

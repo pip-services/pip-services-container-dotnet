@@ -1,11 +1,10 @@
-﻿using Xunit;
-using PipServices.Container.Config;
-using PipServices.Commons.Refer;
-using PipServices.Commons.Config;
+﻿using PipServices.Commons.Config;
 using PipServices.Commons.Errors;
+using PipServices.Commons.Refer;
+using Xunit;
 using TypeDescriptor = PipServices.Commons.Reflect.TypeDescriptor;
 
-namespace PipServices.Container.Test.Config
+namespace PipServices.Container.Config
 {
     public sealed class ComponentConfigTest
     {
@@ -26,7 +25,7 @@ namespace PipServices.Container.Test.Config
             var componentConfig = new ComponentConfig();
             Assert.Null(componentConfig.Descriptor);
 
-            var descriptor = new Descriptor("group", "type", "id", "version");
+            var descriptor = new Descriptor("group", "type", "id", "*", "version");
             componentConfig.Descriptor = descriptor;
             Assert.Equal(componentConfig.Descriptor, descriptor);
         }
@@ -75,10 +74,10 @@ namespace PipServices.Container.Test.Config
                 Assert.Equal(e.Message, "Descriptor descriptor_name is in wrong format");
             }
 
-            var descriptor = new Descriptor("group", "type", "id", "version");
+            var descriptor = new Descriptor("group", "type", "id", "name", "version");
             var type = new TypeDescriptor("type", null);
             config = ConfigParams.FromTuples(
-                "descriptor", "group:type:id:version",
+                "descriptor", "group:type:id:name:version",
                 "type", "type",
                 "config.key", "key",
                 "config.key2", "key2"

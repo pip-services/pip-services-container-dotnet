@@ -8,11 +8,11 @@ using PipServices.Container.Config;
 
 namespace PipServices.Container.Refer
 {
-    public sealed class ContainerReferenceSet : ReferenceSet
+    public sealed class ContainerReferenceSet : References
     {
         private IFactory FindFactory(object locator)
         {
-            foreach (var factory in References.Cast<IFactory>())
+            foreach (var factory in _references.Cast<IFactory>())
             {
                 if (factory != null)
                 {
@@ -50,22 +50,6 @@ namespace PipServices.Container.Refer
             {
                 throw new ReferenceException(null, locator).WithCause(ex);
             }
-        }
-
-        protected override object ResolveMissing(object locator)
-        {
-            var component = CreateStatically(locator);
-
-            // Add to the list
-            if (component != null)
-                Put(component, locator);
-
-            // Reference with other components
-            var referenceable = component as IReferenceable;
-
-            referenceable?.SetReferences(this);
-
-            return component;
         }
 
         public void PutFromConfig(ContainerConfig config)

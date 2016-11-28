@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace PipServices.Container.Test
+namespace PipServices.Container
 {
     public class Program
     {

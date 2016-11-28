@@ -1,17 +1,14 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-using PipServices.Commons.Refer;
+﻿using System.Threading.Tasks;
 using PipServices.Commons.Config;
-using PipServices.Commons.Errors;
 using PipServices.Commons.Log;
+using PipServices.Commons.Refer;
 using PipServices.Commons.Run;
 
-namespace PipServices.Container.Test
+namespace PipServices.Container
 {
     public sealed class DummyController : IReferenceable, IReconfigurable, IOpenable, IClosable, INotifiable
     {
-        public static Descriptor Descriptor { get; } = new Descriptor("pip-services-dummies", "controller", "*", "1.0");
+        public static Descriptor Descriptor { get; } = new Descriptor("pip-services-dummies", "controller", "*", "*", "1.0");
 
         private readonly FixedRateTimer _timer;
         private readonly CompositeLogger _logger = new CompositeLogger();
@@ -20,7 +17,7 @@ namespace PipServices.Container.Test
 
         public DummyController()
         {
-            _timer = new FixedRateTimer(this, 1000, 1000);
+            _timer = new FixedRateTimer(async () => { await NotifyAsync(null); }, 1000, 1000);
         }
 
         public void Configure(ConfigParams config)
@@ -38,21 +35,23 @@ namespace PipServices.Container.Test
             _timer.Start();
             _logger.Trace(correlationId, "Dummy controller opened");
 
-            return Task.CompletedTask;
+            return Task.Delay(0);
         }
 
-        public async Task CloseAsync(string correlationId)
+        public Task CloseAsync(string correlationId)
         {
-            await _timer.CloseAsync(correlationId);
+            _timer.Stop();
 
             _logger.Trace(correlationId, "Dummy controller closed");
+
+            return Task.Delay(0);
         }
 
         public Task NotifyAsync(string correlationId)
         {
             _logger.Info(correlationId, "%d - %s", Counter++, Message);
 
-            return Task.CompletedTask;
+            return Task.Delay(0);
         }
     }
 }

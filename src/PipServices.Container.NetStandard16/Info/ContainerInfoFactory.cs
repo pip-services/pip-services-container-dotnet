@@ -5,7 +5,7 @@ namespace PipServices.Container.Info
 {
     public sealed class ContainerInfoFactory : IFactory, IDescriptable
     {
-        private static readonly Descriptor Descriptor = new Descriptor("pip-services-container", "factory", "container-info", "1.0");
+        private static readonly Descriptor Descriptor = new Descriptor("pip-services-container", "factory", "container-info", "*", "1.0");
 
         public Descriptor GetDescriptor()
         {

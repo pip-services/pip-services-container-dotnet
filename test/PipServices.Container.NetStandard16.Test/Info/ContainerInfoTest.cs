@@ -1,15 +1,13 @@
 ﻿using System;
-using Xunit;
-using PipServices.Container.Info;
-using PipServices.Container.Config;
 using PipServices.Commons.Config;
+using Xunit;
 
-namespace PipServices.Container.Test.Info
+namespace PipServices.Container.Info
 {
     public sealed class ContainerInfoTest
     {
         [Fact]
-    public void TestName()
+        public void TestName()
         {
             var containerInfo = new ContainerInfo();
 

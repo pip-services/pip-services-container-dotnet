@@ -8,7 +8,7 @@ namespace PipServices.Container.Info
 {
     public sealed class ContainerInfo : IDescriptable
     {
-        public static Descriptor Descriptor = new Descriptor("pip-services-container", "container-info", "default", "1.0");
+        public static Descriptor Descriptor = new Descriptor("pip-services-container", "container-info", "default", "*", "1.0");
 
         private string _name = "unknown";
         private StringValueMap _properties = new StringValueMap();

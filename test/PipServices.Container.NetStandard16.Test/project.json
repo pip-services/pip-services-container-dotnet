@@ -4,6 +4,7 @@
   "description": "Performs unit testing for Pip.Services Container",
   "version": "1.0.0-*",
   "buildOptions": {
+    "outputName": "PipServices.Container.Test",
     "emitEntryPoint": true,
     "define": [ "CORE_NET" ]
   },

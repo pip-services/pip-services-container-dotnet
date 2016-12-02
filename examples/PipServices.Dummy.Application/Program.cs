@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Threading;
+using PipServices.Container;
 
-namespace PipServices.Container
+namespace PipServices.Dummy.Application
 {
     public class Program
     {

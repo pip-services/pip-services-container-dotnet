@@ -14,10 +14,10 @@ namespace PipServices.Container.Config
 
             var ext = Path.GetExtension(path);
 
-            if (ext.Equals("json"))
+            if (ext.Equals(".json"))
                 return ReadFromJsonFile(correlationId, path);
 
-            if (ext.Equals("yaml"))
+            if (ext.Equals(".yaml"))
                 return ReadFromYamlFile(correlationId, path);
 
             // By default read as JSON

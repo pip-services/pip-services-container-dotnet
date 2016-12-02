@@ -97,7 +97,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
@@ -105,7 +107,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\PipServices.Container.Net45\PipServices.Container.Net45.csproj">
       <Project>{70df5cbe-2479-47fa-9592-9c580f198667}</Project>
-      <Name>PipServices.Container.Net461</Name>
+      <Name>PipServices.Container.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

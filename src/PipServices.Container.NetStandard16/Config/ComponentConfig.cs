@@ -26,13 +26,10 @@ namespace PipServices.Container.Config
         {
             var descriptor = Descriptor.FromString(config.GetAsNullableString("descriptor"));
 
-            if (descriptor == null)
-                throw new ConfigException(null, "BAD_CONFIG", "Component configuration must have descriptor");
-
             var type = TypeDescriptor.FromString(config.GetAsNullableString("type"));
 
-            if (type == null)
-                throw new ConfigException(null, "BAD_CONFIG", "Component configuration must have type");
+            if (descriptor == null && type == null)
+                throw new ConfigException(null, "BAD_CONFIG", "Component configuration must have descriptor or type");
 
             return new ComponentConfig(descriptor, type, config);
         }

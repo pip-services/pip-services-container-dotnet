@@ -7,9 +7,9 @@ using PipServices.Container.Info;
 
 namespace PipServices.Container.Build
 {
-    public class DefaultContainerFactory : CompositeFactory
+    public class DefaultContainerFactory : CompositeFactory, IDescriptable
     {
-        public  static Descriptor Descriptor { get; } = new Descriptor("pip-services-container", "factory", "container", "default", "1.0");
+        public static Descriptor Descriptor { get; } = new Descriptor("pip-services-container", "factory", "container", "default", "1.0");
 
         public DefaultContainerFactory()
         {
@@ -17,6 +17,11 @@ namespace PipServices.Container.Build
             Add(new DefaultLoggerFactory());
             Add(new DefaultCountersFactory());
             Add(new DefaultCacheFactory());
+        }
+
+        public Descriptor GetDescriptor()
+        {
+            return Descriptor;
         }
     }
 }

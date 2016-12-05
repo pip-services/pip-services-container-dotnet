@@ -26,6 +26,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{81
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PipServices.Dummy.Application", "examples\PipServices.Dummy.Application\PipServices.Dummy.Application.xproj", "{F7355C60-A622-4E02-A5A1-05AC16563BBE}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PipServices.Commons.NetStandard16", "..\pip-services-commons-dotnet\src\PipServices.Commons.Netstandard16\PipServices.Commons.NetStandard16.xproj", "{6D9CC0D7-45A5-4A70-A226-3D29BBD06892}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipServices.Commons.Net45", "..\pip-services-commons-dotnet\src\PipServices.Commons.Net45\PipServices.Commons.Net45.csproj", "{C0DBD324-390F-4490-BF56-E778241D514D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +56,14 @@ Global
 		{F7355C60-A622-4E02-A5A1-05AC16563BBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7355C60-A622-4E02-A5A1-05AC16563BBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7355C60-A622-4E02-A5A1-05AC16563BBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D9CC0D7-45A5-4A70-A226-3D29BBD06892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D9CC0D7-45A5-4A70-A226-3D29BBD06892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D9CC0D7-45A5-4A70-A226-3D29BBD06892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D9CC0D7-45A5-4A70-A226-3D29BBD06892}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0DBD324-390F-4490-BF56-E778241D514D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0DBD324-390F-4490-BF56-E778241D514D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0DBD324-390F-4490-BF56-E778241D514D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0DBD324-390F-4490-BF56-E778241D514D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,5 +74,7 @@ Global
 		{41174940-002A-4161-9FC0-6DB15A5663CB} = {788C3EAB-43A1-4DD9-AB8C-19E72607526C}
 		{99C6D605-6E5C-4E23-9DAB-4C6B275BC321} = {788C3EAB-43A1-4DD9-AB8C-19E72607526C}
 		{F7355C60-A622-4E02-A5A1-05AC16563BBE} = {81F4B757-0499-4793-813B-4F8985D7F76E}
+		{6D9CC0D7-45A5-4A70-A226-3D29BBD06892} = {C472F280-CDF3-4270-BF07-3A114FF5204A}
+		{C0DBD324-390F-4490-BF56-E778241D514D} = {C472F280-CDF3-4270-BF07-3A114FF5204A}
 	EndGlobalSection
 EndGlobal

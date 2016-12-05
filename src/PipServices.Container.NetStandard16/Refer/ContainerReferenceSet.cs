@@ -12,7 +12,9 @@ namespace PipServices.Container.Refer
     {
         private IFactory FindFactory(object locator)
         {
-            foreach (var factory in _references.Cast<IFactory>())
+            var factories = GetOptional<IFactory>(new Descriptor("*", "factory", "*", "*", "*"));
+
+            foreach (var factory in factories)
             {
                 if (factory != null)
                 {
@@ -67,9 +69,8 @@ namespace PipServices.Container.Refer
                         locator = componentConfig.Type;
                         component = TypeReflector.CreateInstanceByDescriptor(componentConfig.Type);
                     }
-
                     // Or create component statically
-                    if (componentConfig.Descriptor != null)
+                    else if (componentConfig.Descriptor != null)
                     {
                         locator = componentConfig.Descriptor;
                         component = CreateStatically(componentConfig.Descriptor);

@@ -49,7 +49,7 @@ namespace PipServices.Container
 
         public Task NotifyAsync(string correlationId)
         {
-            _logger.Info(correlationId, "%d - %s", Counter++, Message);
+            _logger.Info(correlationId, "{0} - {1}", Counter++, Message);
 
             return Task.Delay(0);
         }

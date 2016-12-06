@@ -55,7 +55,7 @@ namespace PipServices.Container.Config
             }
             catch (ConfigException e)
             {
-                Assert.Equal(e.Message, "Component configuration must have descriptor");
+                Assert.Equal(e.Message, "Component configuration must have descriptor or type");
             }
 
             config = ConfigParams.FromTuples(

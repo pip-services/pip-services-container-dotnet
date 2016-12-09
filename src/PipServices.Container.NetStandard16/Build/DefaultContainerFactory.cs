@@ -9,7 +9,7 @@ namespace PipServices.Container.Build
 {
     public class DefaultContainerFactory : CompositeFactory, IDescriptable
     {
-        public static Descriptor Descriptor { get; } = new Descriptor("pip-services-container", "factory", "container", "default", "1.0");
+        private static readonly Descriptor _descriptor = new Descriptor("pip-services-container", "factory", "container", "default", "1.0");
 
         public DefaultContainerFactory()
         {
@@ -21,7 +21,7 @@ namespace PipServices.Container.Build
 
         public Descriptor GetDescriptor()
         {
-            return Descriptor;
+            return _descriptor;
         }
     }
 }

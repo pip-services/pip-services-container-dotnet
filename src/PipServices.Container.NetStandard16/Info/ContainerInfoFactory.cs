@@ -5,11 +5,11 @@ namespace PipServices.Container.Info
 {
     public sealed class ContainerInfoFactory : IFactory, IDescriptable
     {
-        private static readonly Descriptor Descriptor = new Descriptor("pip-services-container", "factory", "container-info", "default", "1.0");
+        private static readonly Descriptor _descriptor = new Descriptor("pip-services-container", "factory", "container-info", "default", "1.0");
 
         public Descriptor GetDescriptor()
         {
-            return Descriptor;
+            return _descriptor;
         }
 
         public bool CanCreate(object locator)

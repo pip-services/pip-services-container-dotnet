@@ -4,5 +4,5 @@
 - descriptor: "pip-services-dummies:controller:*:*:*"
   message: "Hello from dummy controller #1"
 
-- descriptor: "pip-services-container:container-info:*:*:*"
+- descriptor: "pip-services-dummies:controller:*:*:*"
   message: "Hello from dummy controller #2"

@@ -17,15 +17,12 @@ namespace PipServices.Container.Config
         }
 
         public Descriptor Descriptor { get; set; }
-
         public TypeDescriptor Type { get; set; }
-
         public ConfigParams Config { get; set; }
 
         public static ComponentConfig FromConfig(ConfigParams config)
         {
             var descriptor = Descriptor.FromString(config.GetAsNullableString("descriptor"));
-
             var type = TypeDescriptor.FromString(config.GetAsNullableString("type"));
 
             if (descriptor == null && type == null)

@@ -24,7 +24,7 @@ namespace PipServices.Container
         protected ILogger Logger = new NullLogger();
         public ContainerInfo Info { get; protected set; } = new ContainerInfo();
         public ContainerConfig Config { get; set; }
-        public ContainerReferenceSet References { get; protected set; }
+        public ContainerReferences References { get; protected set; }
 
         public void ReadConfigFromFile(string correlationId, string path)
         {
@@ -47,7 +47,7 @@ namespace PipServices.Container
                 Logger.Trace(correlationId, "Starting container.");
 
                 // Create references with configured components
-                References = new ContainerReferenceSet();
+                References = new ContainerReferences();
                 InitReferences(References);
                 References.PutFromConfig(Config);
 

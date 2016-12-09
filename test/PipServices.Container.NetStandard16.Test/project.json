@@ -15,8 +15,8 @@
     },
     "xunit": "2.2.0-beta2-build3300",
     "dotnet-test-xunit": "2.2.0-preview2-build1029",
-    "PipServices.Commons": "1.0.29",
-    "PipServices.Container.NetStandard16": "1.0.5"},
+    "PipServices.Container.NetStandard16": "1.0.5",
+    "PipServices.Commons": "1.0.30"},
 
   "frameworks": {
     "netcoreapp1.0": {

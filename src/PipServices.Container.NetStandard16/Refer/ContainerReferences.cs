@@ -8,50 +8,14 @@ using PipServices.Container.Config;
 
 namespace PipServices.Container.Refer
 {
-    public sealed class ContainerReferenceSet : References
+    public sealed class ContainerReferences : ManagedReferences
     {
-        private IFactory FindFactory(object locator)
-        {
-            var factories = GetOptional<IFactory>(new Descriptor("*", "factory", "*", "*", "*"));
-
-            foreach (var factory in factories)
-            {
-                if (factory != null)
-                {
-                    if (factory.CanCreate(locator))
-                        return factory;
-                }
-            }
-
-            return null;
-        }
-
         private object CreateStatically(object locator)
         {
-            // Find factory
-            var factory = FindFactory(locator);
-
-            if (factory == null)
-                return null;
-
-            try
-            {
-                // Create component
-                var component = factory.Create(locator);
-
-                if (component == null)
-                    return null;
-
-                // Replace locator
-                if (component is IDescriptable)
-                    locator = ((IDescriptable) component).GetDescriptor();
-
-                return component;
-            }
-            catch (CreateException ex)
-            {
-                throw new ReferenceException(null, locator).WithCause(ex);
-            }
+            var component = _builder.Create(locator);
+            if (component == null)
+                throw new ReferenceException(null, locator);
+            return component;
         }
 
         public void PutFromConfig(ContainerConfig config)
@@ -85,9 +49,9 @@ namespace PipServices.Container.Refer
 
                     // Add component to the list
                     if (component is ILocateable || component is IDescriptable)
-                        Put(component);
+                        _references.Put(component);
                     else
-                        Put(component, locator);
+                        _references.Put(component, locator);
 
                     // Configure component
                     var configurable = component as IConfigurable;

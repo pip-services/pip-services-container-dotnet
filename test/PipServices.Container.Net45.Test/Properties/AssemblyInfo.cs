@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Unit Tests for Pip.Services Container")]
 [assembly: AssemblyDescription("Performs unit testing for Pip.Services Container")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Digital Living Software Inc.")]
+[assembly: AssemblyCompany("Conceptual Vision Consulting LLC.")]
 [assembly: AssemblyProduct("Pip.Services")]
-[assembly: AssemblyCopyright("Copyright © Digital Living Software Inc. 2009-2016")]
+[assembly: AssemblyCopyright("Copyright © Conceptual Vision Consulting LLC. 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

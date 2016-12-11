@@ -1,27 +1,26 @@
 {
-  "title": "Unit Tests for Pip.Services Container",
-  "copyright": "Copyright © Digital Living Software Inc. 2009-2016",
-  "description": "Performs unit testing for Pip.Services Container",
   "version": "1.0.0-*",
-  "buildOptions": {
-    "emitEntryPoint": true,
-    "define": [ "CORE_NET" ]
-  },
 
   "dependencies": {
+    "dotnet-test-xunit": "2.2.0-preview2-build1029",
+    "xunit": "2.2.0-beta2-build3300",
     "Microsoft.NETCore.App": {
       "type": "platform",
       "version": "1.0.1"
     },
-    "xunit": "2.2.0-beta2-build3300",
-    "dotnet-test-xunit": "2.2.0-preview2-build1029",
-    "PipServices.Container.NetStandard16": "1.0.5",
-    "PipServices.Commons": "1.0.30"},
+    "PipServices.Commons": "1.0.33",
+    "PipServices.Container.NetStandard16": "1.0.0"
+  },
 
   "frameworks": {
     "netcoreapp1.0": {
       "imports": [ "dnxcore50", "portable-net45+win8" ]
     }
+  },
+
+  "buildOptions": {
+    "outputName": "PipServices.Container.Test",
+    "define": [ "CORE_NET" ]
   },
 
   "testRunner": "xunit"

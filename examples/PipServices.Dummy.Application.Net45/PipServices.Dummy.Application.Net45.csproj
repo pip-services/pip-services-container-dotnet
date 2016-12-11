@@ -7,8 +7,8 @@
     <ProjectGuid>{12F3E9DA-EC79-478B-AB53-E70D22E8448F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PipServices.Dummy.Application.Net45</RootNamespace>
-    <AssemblyName>PipServices.Dummy.Application.Net45</AssemblyName>
+    <RootNamespace>PipServices.Dummy.Application</RootNamespace>
+    <AssemblyName>PipServices.Dummy.Application</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

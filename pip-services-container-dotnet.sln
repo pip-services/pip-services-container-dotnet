@@ -7,9 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C472F280-CDF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BB43595A-FEAD-4ACD-B955-537A8827B1B0}"
 	ProjectSection(SolutionItems) = preProject
+		CHANGELOG.md = CHANGELOG.md
 		dummy.yaml = dummy.yaml
 		global.json = global.json
 		PipServices.Container.nuspec = PipServices.Container.nuspec
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{788C3EAB-43A1-4DD9-AB8C-19E72607526C}"
@@ -27,6 +29,12 @@ EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PipServices.Dummy.Application.NetStandard16", "examples\PipServices.Dummy.Application.NetStandard16\PipServices.Dummy.Application.NetStandard16.xproj", "{F7355C60-A622-4E02-A5A1-05AC16563BBE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipServices.Dummy.Application.Net45", "examples\PipServices.Dummy.Application.Net45\PipServices.Dummy.Application.Net45.csproj", "{12F3E9DA-EC79-478B-AB53-E70D22E8448F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{271853D6-03C6-41F8-BFEF-5BBD686CC518}"
+	ProjectSection(SolutionItems) = preProject
+		doc\Development.md = doc\Development.md
+		doc\Downloads.md = doc\Downloads.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

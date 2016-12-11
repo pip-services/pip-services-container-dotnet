@@ -1,7 +1,7 @@
 {
-  "version": "1.0.5",
+  "version": "1.0.0",
 
-  "copyright": "Copyright © Digital Living Software Inc. 2009-2016",
+  "copyright": "Copyright © Conceptual Vision Consulting LLC. 2016",
   "title": "IoC container for Pip.Services",
   "authors": [ "Sergey Seroukhov", "Volodymyr Tkachenko" ],
   "description": "General-purpose component container for Pip.Services in Core.NET",
@@ -13,7 +13,7 @@
 
   "dependencies": {
     "NETStandard.Library": "1.6.1",
-    "PipServices.Commons": "1.0.30",
+    "PipServices.Commons": "1.0.33",
     "System.Runtime.Loader": "4.3.0",
     "System.Threading.Thread": "4.3.0"
   },

@@ -1,4 +1,4 @@
-# <img src="https://github.com/pip-services/pip-services/raw/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> Basic portable abstractions for .NET
+# <img src="https://github.com/pip-services/pip-services/raw/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> IoC container for .NET
 
 This framework is a part of [Pip.Services](https://github.com/pip-services/pip-services) project.
 It provides inversion-of-control component container to facilitate development of composable services and applications.
@@ -8,8 +8,6 @@ As all Pip.Services projects this framework implemented in variety of different 
 The framework provides light-weight container that can be embedded inside service or application, or can be run by itself,
 as a system process, for example. Container configuration service as recipe to instantiate and configure components inside the container.  
 Default container factory provides generic functionality on demand such as logging and performance monitoring.
-
-All functionality is decomposed into several packages:
 
 - **Core** - Component container and container as a system process
 - **Build** - Container default factory

@@ -63,7 +63,7 @@ namespace PipServices.Container
                 var infoDescriptor = new Descriptor("*", "container-info", "*", "*", "*");
                 Info = (ContainerInfo) References.GetOneRequired(infoDescriptor);
 
-                Logger.Info(correlationId, "Container %s started.", Info.Name);
+                Logger.Info(correlationId, "Container {0} started.", Info.Name);
             }
             catch (Exception ex)
             {
@@ -81,14 +81,14 @@ namespace PipServices.Container
 
             try
             {
-                Logger.Trace(correlationId, "Stopping %s container", Info.Name);
+                Logger.Trace(correlationId, "Stopping {0} container", Info.Name);
 
                 // Close and deference components
                 var components = References.GetAll();
                 await Closer.CloseComponentsAsync(correlationId, components);
                 Referencer.UnsetReferencesForComponents(components);
 
-                Logger.Info(correlationId, "Container %s stopped", Info.Name);
+                Logger.Info(correlationId, "Container {0} stopped", Info.Name);
             }
             catch (Exception ex)
             {

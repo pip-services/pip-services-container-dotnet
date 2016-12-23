@@ -2,7 +2,7 @@
 using System.Threading;
 using PipServices.Container;
 
-namespace PipServices.Dummy.Application.Net45
+namespace PipServices.Dummy.Application
 {
     class Program
     {

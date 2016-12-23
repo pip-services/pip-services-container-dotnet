@@ -8,8 +8,8 @@
       "type": "platform",
       "version": "1.0.1"
     },
-    "PipServices.Commons": "1.0.33",
-    "PipServices.Container.NetStandard16": "1.0.0"
+    "PipServices.Container.NetStandard16": "1.0.0",
+    "PipServices.Commons": "1.0.36"
   },
 
   "frameworks": {

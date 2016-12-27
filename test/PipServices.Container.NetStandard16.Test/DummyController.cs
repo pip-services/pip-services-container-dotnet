@@ -17,7 +17,10 @@ namespace PipServices.Container
 
         public DummyController()
         {
-            _timer = new FixedRateTimer(async () => { await NotifyAsync(null, null); }, 1000, 1000);
+            _timer = new FixedRateTimer(
+                async () => { await NotifyAsync(null, new Parameters()); }, 
+                1000, 1000
+            );
         }
 
         public void Configure(ConfigParams config)

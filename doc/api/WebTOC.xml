@@ -2,40 +2,40 @@
 <HelpTOC>
 
   <HelpTOCNode Title="Welcome to the PipServices.Container" Url="html/8c1c4534-fcf8-4adb-81a6-b39ad99b4404.htm" />
-  <HelpTOCNode Id="79a9926d-4cdc-4423-af63-30d009888a31" Title="Version History" Url="html/e34814bd-912b-4ea8-aa19-0c43a90f7074.htm">
+  <HelpTOCNode Id="05ac8f02-c797-4bc1-9509-451152d24fc2" Title="Version History" Url="html/e34814bd-912b-4ea8-aa19-0c43a90f7074.htm">
     <HelpTOCNode Title="Version 1.0.9" Url="html/fb8a3ad8-80f9-41e3-9693-2a776fb6c7eb.htm" />
   </HelpTOCNode>
-  <HelpTOCNode Id="07b63068-e3d0-46ef-91de-e0bac9f36635" Title="PipServices.Container" Url="html/N_PipServices_Container.htm">
-    <HelpTOCNode Id="1655c282-68c5-431c-8110-87e94399ba7b" Title="Container Class" Url="html/T_PipServices_Container_Container.htm">
-      <HelpTOCNode Id="03a572b5-36be-4f3c-bdd7-796d22405f10" Title="Container Constructor " Url="html/Overload_PipServices_Container_Container__ctor.htm">
+  <HelpTOCNode Id="86cdcf02-697a-4e35-ba30-d25f295c6350" Title="PipServices.Container" Url="html/N_PipServices_Container.htm">
+    <HelpTOCNode Id="b7c60970-e255-4162-aebf-68f5855e098b" Title="Container Class" Url="html/T_PipServices_Container_Container.htm">
+      <HelpTOCNode Id="ce797eb0-0a99-4826-8abd-24dab380a62b" Title="Container Constructor " Url="html/Overload_PipServices_Container_Container__ctor.htm">
         <HelpTOCNode Title="Container Constructor " Url="html/M_PipServices_Container_Container__ctor.htm" />
         <HelpTOCNode Title="Container Constructor (ContainerConfig)" Url="html/M_PipServices_Container_Container__ctor_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="e50db13e-bf2b-4769-aa4d-90d8411cc3fb" Title="Container Properties" Url="html/Properties_T_PipServices_Container_Container.htm">
+      <HelpTOCNode Id="e3a90942-8361-43ed-a202-064ad9159632" Title="Container Properties" Url="html/Properties_T_PipServices_Container_Container.htm">
         <HelpTOCNode Title="Config Property " Url="html/P_PipServices_Container_Container_Config.htm" />
         <HelpTOCNode Title="Info Property " Url="html/P_PipServices_Container_Container_Info.htm" />
         <HelpTOCNode Title="References Property " Url="html/P_PipServices_Container_Container_References.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="a89bc0fb-e1af-41e8-ab26-e95a9672cfad" Title="Container Methods" Url="html/Methods_T_PipServices_Container_Container.htm">
+      <HelpTOCNode Id="264a56ee-8b30-4aaa-9fab-36da7058783a" Title="Container Methods" Url="html/Methods_T_PipServices_Container_Container.htm">
         <HelpTOCNode Title="InitReferences Method " Url="html/M_PipServices_Container_Container_InitReferences.htm" />
         <HelpTOCNode Title="ReadConfigFromFile Method " Url="html/M_PipServices_Container_Container_ReadConfigFromFile.htm" />
         <HelpTOCNode Title="StartAsync Method " Url="html/M_PipServices_Container_Container_StartAsync.htm" />
         <HelpTOCNode Title="StopAsync Method " Url="html/M_PipServices_Container_Container_StopAsync.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="b3ce0b2a-3373-4e88-a0b5-c337fe29f335" Title="Container Fields" Url="html/Fields_T_PipServices_Container_Container.htm">
+      <HelpTOCNode Id="1652eb0d-dc17-4701-8330-a52051e250de" Title="Container Fields" Url="html/Fields_T_PipServices_Container_Container.htm">
         <HelpTOCNode Title="Logger Field" Url="html/F_PipServices_Container_Container_Logger.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="0eeb25e6-4c57-4760-9adb-662669f80646" Title="ProcessContainer Class" Url="html/T_PipServices_Container_ProcessContainer.htm">
+    <HelpTOCNode Id="3012b81d-e3c5-4326-afb0-c5e6d1c1d1f9" Title="ProcessContainer Class" Url="html/T_PipServices_Container_ProcessContainer.htm">
       <HelpTOCNode Title="ProcessContainer Constructor " Url="html/M_PipServices_Container_ProcessContainer__ctor.htm" />
       <HelpTOCNode Title="ProcessContainer Properties" Url="html/Properties_T_PipServices_Container_ProcessContainer.htm" />
-      <HelpTOCNode Id="4a9ee180-5956-4ed2-9bf1-128b42da96f8" Title="ProcessContainer Methods" Url="html/Methods_T_PipServices_Container_ProcessContainer.htm">
-        <HelpTOCNode Id="c69a2de7-f16e-470c-bc37-e3a6fa086a7a" Title="ReadConfigFromFile Method " Url="html/Overload_PipServices_Container_ProcessContainer_ReadConfigFromFile.htm">
+      <HelpTOCNode Id="ae310ed4-e59d-4663-9e68-12484183a1ba" Title="ProcessContainer Methods" Url="html/Methods_T_PipServices_Container_ProcessContainer.htm">
+        <HelpTOCNode Id="d5467ae4-d033-4742-a0b0-ab8be5b67863" Title="ReadConfigFromFile Method " Url="html/Overload_PipServices_Container_ProcessContainer_ReadConfigFromFile.htm">
           <HelpTOCNode Title="ReadConfigFromFile Method (String, String[], String)" Url="html/M_PipServices_Container_ProcessContainer_ReadConfigFromFile.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="RunAsync Method " Url="html/M_PipServices_Container_ProcessContainer_RunAsync.htm" />
         <HelpTOCNode Title="RunWithConfigAsync Method " Url="html/M_PipServices_Container_ProcessContainer_RunWithConfigAsync.htm" />
-        <HelpTOCNode Id="72abe93d-4731-45eb-8118-2627f9e4221c" Title="RunWithConfigFileAsync Method " Url="html/Overload_PipServices_Container_ProcessContainer_RunWithConfigFileAsync.htm">
+        <HelpTOCNode Id="ba7a54ee-6821-41d3-bae6-51237662f464" Title="RunWithConfigFileAsync Method " Url="html/Overload_PipServices_Container_ProcessContainer_RunWithConfigFileAsync.htm">
           <HelpTOCNode Title="RunWithConfigFileAsync Method (String, String, CancellationToken)" Url="html/M_PipServices_Container_ProcessContainer_RunWithConfigFileAsync.htm" />
           <HelpTOCNode Title="RunWithConfigFileAsync Method (String, String[], String, CancellationToken)" Url="html/M_PipServices_Container_ProcessContainer_RunWithConfigFileAsync_1.htm" />
         </HelpTOCNode>
@@ -43,81 +43,81 @@
       <HelpTOCNode Title="ProcessContainer Fields" Url="html/Fields_T_PipServices_Container_ProcessContainer.htm" />
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="0ffd74de-3bfd-4e49-b9c4-83bdce8404d2" Title="PipServices.Container.Build" Url="html/N_PipServices_Container_Build.htm">
-    <HelpTOCNode Id="92fb55d0-7f70-4bae-b747-4c7909ad1038" Title="DefaultContainerFactory Class" Url="html/T_PipServices_Container_Build_DefaultContainerFactory.htm">
+  <HelpTOCNode Id="48d5f6cb-efe9-4b51-abde-800009b74510" Title="PipServices.Container.Build" Url="html/N_PipServices_Container_Build.htm">
+    <HelpTOCNode Id="25f16427-2107-47e3-95ad-328a7aafcd0a" Title="DefaultContainerFactory Class" Url="html/T_PipServices_Container_Build_DefaultContainerFactory.htm">
       <HelpTOCNode Title="DefaultContainerFactory Constructor " Url="html/M_PipServices_Container_Build_DefaultContainerFactory__ctor.htm" />
-      <HelpTOCNode Id="b8ff66f3-17b0-46e3-8ad5-83158e5a8777" Title="DefaultContainerFactory Methods" Url="html/Methods_T_PipServices_Container_Build_DefaultContainerFactory.htm">
+      <HelpTOCNode Id="3c21e586-32b2-4c57-bd5e-5c8b48bd147e" Title="DefaultContainerFactory Methods" Url="html/Methods_T_PipServices_Container_Build_DefaultContainerFactory.htm">
         <HelpTOCNode Title="GetDescriptor Method " Url="html/M_PipServices_Container_Build_DefaultContainerFactory_GetDescriptor.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="13177d7f-1585-4142-b98b-285201b4beda" Title="PipServices.Container.Config" Url="html/N_PipServices_Container_Config.htm">
-    <HelpTOCNode Id="3ffba508-1c30-479a-84c8-3d3f4815adb9" Title="ComponentConfig Class" Url="html/T_PipServices_Container_Config_ComponentConfig.htm">
-      <HelpTOCNode Id="534fa695-95e6-4eff-ab66-48522904a668" Title="ComponentConfig Constructor " Url="html/Overload_PipServices_Container_Config_ComponentConfig__ctor.htm">
+  <HelpTOCNode Id="74362a48-a5f4-4386-b21c-bd26b12370d3" Title="PipServices.Container.Config" Url="html/N_PipServices_Container_Config.htm">
+    <HelpTOCNode Id="32ad5def-4a1e-4dcc-89ed-db4d563adc1c" Title="ComponentConfig Class" Url="html/T_PipServices_Container_Config_ComponentConfig.htm">
+      <HelpTOCNode Id="775c958b-6828-4ca0-95b3-f6c86caf96cb" Title="ComponentConfig Constructor " Url="html/Overload_PipServices_Container_Config_ComponentConfig__ctor.htm">
         <HelpTOCNode Title="ComponentConfig Constructor " Url="html/M_PipServices_Container_Config_ComponentConfig__ctor.htm" />
         <HelpTOCNode Title="ComponentConfig Constructor (Descriptor, TypeDescriptor, ConfigParams)" Url="html/M_PipServices_Container_Config_ComponentConfig__ctor_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="60101396-61d9-4ac6-84c8-7f62900d32d7" Title="ComponentConfig Properties" Url="html/Properties_T_PipServices_Container_Config_ComponentConfig.htm">
+      <HelpTOCNode Id="4deb5707-e7d8-4a12-9aac-3a289ac74fa4" Title="ComponentConfig Properties" Url="html/Properties_T_PipServices_Container_Config_ComponentConfig.htm">
         <HelpTOCNode Title="Config Property " Url="html/P_PipServices_Container_Config_ComponentConfig_Config.htm" />
         <HelpTOCNode Title="Descriptor Property " Url="html/P_PipServices_Container_Config_ComponentConfig_Descriptor.htm" />
         <HelpTOCNode Title="Type Property " Url="html/P_PipServices_Container_Config_ComponentConfig_Type.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="508e0cb4-6b03-41d1-97d5-53525555a3a2" Title="ComponentConfig Methods" Url="html/Methods_T_PipServices_Container_Config_ComponentConfig.htm">
+      <HelpTOCNode Id="c776cc8e-7ee9-4e7a-8b35-0273ed19a08d" Title="ComponentConfig Methods" Url="html/Methods_T_PipServices_Container_Config_ComponentConfig.htm">
         <HelpTOCNode Title="FromConfig Method " Url="html/M_PipServices_Container_Config_ComponentConfig_FromConfig.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="46e3ea15-54c7-41de-9ede-1020db27affd" Title="ContainerConfig Class" Url="html/T_PipServices_Container_Config_ContainerConfig.htm">
-      <HelpTOCNode Id="fcac521b-1219-4042-ae60-77aada20c087" Title="ContainerConfig Constructor " Url="html/Overload_PipServices_Container_Config_ContainerConfig__ctor.htm">
+    <HelpTOCNode Id="fc9171d6-a45b-4d65-b359-462f890443a0" Title="ContainerConfig Class" Url="html/T_PipServices_Container_Config_ContainerConfig.htm">
+      <HelpTOCNode Id="fe6f05fa-47f6-407f-85ed-dd25bd374e07" Title="ContainerConfig Constructor " Url="html/Overload_PipServices_Container_Config_ContainerConfig__ctor.htm">
         <HelpTOCNode Title="ContainerConfig Constructor " Url="html/M_PipServices_Container_Config_ContainerConfig__ctor.htm" />
         <HelpTOCNode Title="ContainerConfig Constructor (IEnumerable(ComponentConfig))" Url="html/M_PipServices_Container_Config_ContainerConfig__ctor_1.htm" />
       </HelpTOCNode>
       <HelpTOCNode Title="ContainerConfig Properties" Url="html/Properties_T_PipServices_Container_Config_ContainerConfig.htm" />
-      <HelpTOCNode Id="32d3ba42-3ff5-4467-9de8-c4cc1ef039b2" Title="ContainerConfig Methods" Url="html/Methods_T_PipServices_Container_Config_ContainerConfig.htm">
+      <HelpTOCNode Id="16a08bfe-32d7-4880-bf86-f942f2c1d89f" Title="ContainerConfig Methods" Url="html/Methods_T_PipServices_Container_Config_ContainerConfig.htm">
         <HelpTOCNode Title="FromConfig Method " Url="html/M_PipServices_Container_Config_ContainerConfig_FromConfig.htm" />
         <HelpTOCNode Title="FromObject Method " Url="html/M_PipServices_Container_Config_ContainerConfig_FromObject.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="8df49507-8cce-41f0-9d46-625bf03c026d" Title="ContainerConfigReader Class" Url="html/T_PipServices_Container_Config_ContainerConfigReader.htm">
+    <HelpTOCNode Id="7913e282-29db-45d1-9ad7-9508620032d2" Title="ContainerConfigReader Class" Url="html/T_PipServices_Container_Config_ContainerConfigReader.htm">
       <HelpTOCNode Title="ContainerConfigReader Constructor " Url="html/M_PipServices_Container_Config_ContainerConfigReader__ctor.htm" />
-      <HelpTOCNode Id="91200b81-8ae8-4746-9d03-702a3fb332c6" Title="ContainerConfigReader Methods" Url="html/Methods_T_PipServices_Container_Config_ContainerConfigReader.htm">
+      <HelpTOCNode Id="57a8e603-890c-4e48-9701-68479557a928" Title="ContainerConfigReader Methods" Url="html/Methods_T_PipServices_Container_Config_ContainerConfigReader.htm">
         <HelpTOCNode Title="ReadFromFile Method " Url="html/M_PipServices_Container_Config_ContainerConfigReader_ReadFromFile.htm" />
         <HelpTOCNode Title="ReadFromJsonFile Method " Url="html/M_PipServices_Container_Config_ContainerConfigReader_ReadFromJsonFile.htm" />
         <HelpTOCNode Title="ReadFromYamlFile Method " Url="html/M_PipServices_Container_Config_ContainerConfigReader_ReadFromYamlFile.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="e8def68e-368e-4963-a08a-20b1b39c3b44" Title="PipServices.Container.Info" Url="html/N_PipServices_Container_Info.htm">
-    <HelpTOCNode Id="25f4f8d8-a1ed-4580-a716-b587d903cd8f" Title="ContainerInfo Class" Url="html/T_PipServices_Container_Info_ContainerInfo.htm">
+  <HelpTOCNode Id="698f68c5-96b7-40d8-89a6-b82e626af02c" Title="PipServices.Container.Info" Url="html/N_PipServices_Container_Info.htm">
+    <HelpTOCNode Id="c3ca278c-6bb0-4212-bb44-c46163670e8f" Title="ContainerInfo Class" Url="html/T_PipServices_Container_Info_ContainerInfo.htm">
       <HelpTOCNode Title="ContainerInfo Constructor " Url="html/M_PipServices_Container_Info_ContainerInfo__ctor.htm" />
-      <HelpTOCNode Id="da0c1ae5-f262-40b1-aa52-4353893268a3" Title="ContainerInfo Properties" Url="html/Properties_T_PipServices_Container_Info_ContainerInfo.htm">
+      <HelpTOCNode Id="33a9d992-af59-48d6-8d20-9248adf72a7f" Title="ContainerInfo Properties" Url="html/Properties_T_PipServices_Container_Info_ContainerInfo.htm">
         <HelpTOCNode Title="ContainerId Property " Url="html/P_PipServices_Container_Info_ContainerInfo_ContainerId.htm" />
         <HelpTOCNode Title="Description Property " Url="html/P_PipServices_Container_Info_ContainerInfo_Description.htm" />
         <HelpTOCNode Title="Name Property " Url="html/P_PipServices_Container_Info_ContainerInfo_Name.htm" />
         <HelpTOCNode Title="Properties Property " Url="html/P_PipServices_Container_Info_ContainerInfo_Properties.htm" />
         <HelpTOCNode Title="StartTime Property " Url="html/P_PipServices_Container_Info_ContainerInfo_StartTime.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="546ad029-dc73-4ed9-aa2e-202784c38861" Title="ContainerInfo Methods" Url="html/Methods_T_PipServices_Container_Info_ContainerInfo.htm">
+      <HelpTOCNode Id="68309727-6db1-4f0f-96df-04cd2d9da5c2" Title="ContainerInfo Methods" Url="html/Methods_T_PipServices_Container_Info_ContainerInfo.htm">
         <HelpTOCNode Title="FromConfig Method " Url="html/M_PipServices_Container_Info_ContainerInfo_FromConfig.htm" />
         <HelpTOCNode Title="GetDescriptor Method " Url="html/M_PipServices_Container_Info_ContainerInfo_GetDescriptor.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="88f526e3-d980-4eae-9dea-7f830aa7e766" Title="ContainerInfo Fields" Url="html/Fields_T_PipServices_Container_Info_ContainerInfo.htm">
+      <HelpTOCNode Id="907f6a09-c2ee-4179-a459-57c1e55f41ad" Title="ContainerInfo Fields" Url="html/Fields_T_PipServices_Container_Info_ContainerInfo.htm">
         <HelpTOCNode Title="Descriptor Field" Url="html/F_PipServices_Container_Info_ContainerInfo_Descriptor.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="1cbaf597-517f-4825-825d-a0f2b2d2578c" Title="ContainerInfoFactory Class" Url="html/T_PipServices_Container_Info_ContainerInfoFactory.htm">
+    <HelpTOCNode Id="f9757f87-a676-4ca5-a229-ffb291484ec4" Title="ContainerInfoFactory Class" Url="html/T_PipServices_Container_Info_ContainerInfoFactory.htm">
       <HelpTOCNode Title="ContainerInfoFactory Constructor " Url="html/M_PipServices_Container_Info_ContainerInfoFactory__ctor.htm" />
-      <HelpTOCNode Id="96056cff-d259-4f9d-ab98-4d57cadff684" Title="ContainerInfoFactory Methods" Url="html/Methods_T_PipServices_Container_Info_ContainerInfoFactory.htm">
+      <HelpTOCNode Id="6bb99e12-2a97-4335-87ec-6711fc6dca36" Title="ContainerInfoFactory Methods" Url="html/Methods_T_PipServices_Container_Info_ContainerInfoFactory.htm">
         <HelpTOCNode Title="CanCreate Method " Url="html/M_PipServices_Container_Info_ContainerInfoFactory_CanCreate.htm" />
         <HelpTOCNode Title="Create Method " Url="html/M_PipServices_Container_Info_ContainerInfoFactory_Create.htm" />
         <HelpTOCNode Title="GetDescriptor Method " Url="html/M_PipServices_Container_Info_ContainerInfoFactory_GetDescriptor.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="38c45bff-c81f-4a81-8b28-0ac86172e990" Title="PipServices.Container.Refer" Url="html/N_PipServices_Container_Refer.htm">
-    <HelpTOCNode Id="9e040123-7d37-4587-9da4-58129e131f00" Title="ContainerReferences Class" Url="html/T_PipServices_Container_Refer_ContainerReferences.htm">
+  <HelpTOCNode Id="9b2db16b-b8c7-4be0-92a5-b6bc5cd2dcba" Title="PipServices.Container.Refer" Url="html/N_PipServices_Container_Refer.htm">
+    <HelpTOCNode Id="f088e870-7a63-418e-9044-e9ded36d8889" Title="ContainerReferences Class" Url="html/T_PipServices_Container_Refer_ContainerReferences.htm">
       <HelpTOCNode Title="ContainerReferences Constructor " Url="html/M_PipServices_Container_Refer_ContainerReferences__ctor.htm" />
       <HelpTOCNode Title="ContainerReferences Properties" Url="html/Properties_T_PipServices_Container_Refer_ContainerReferences.htm" />
-      <HelpTOCNode Id="80c95ce2-9922-4d86-8635-0f2bd836ec9e" Title="ContainerReferences Methods" Url="html/Methods_T_PipServices_Container_Refer_ContainerReferences.htm">
+      <HelpTOCNode Id="e6024d2c-12df-4aa9-94e2-d722f5d84ac2" Title="ContainerReferences Methods" Url="html/Methods_T_PipServices_Container_Refer_ContainerReferences.htm">
         <HelpTOCNode Title="PutFromConfig Method " Url="html/M_PipServices_Container_Refer_ContainerReferences_PutFromConfig.htm" />
       </HelpTOCNode>
     </HelpTOCNode>

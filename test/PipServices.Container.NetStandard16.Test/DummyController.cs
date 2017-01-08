@@ -6,7 +6,7 @@ using PipServices.Commons.Run;
 
 namespace PipServices.Container
 {
-    public sealed class DummyController : IReferenceable, IReconfigurable, IOpenable, IClosable, INotifiable
+    public sealed class DummyController : IReferenceable, IReconfigurable, IOpenable, INotifiable
     {
         public static Descriptor Descriptor { get; } = new Descriptor("pip-services-dummies", "controller", "default", "default", "1.0");
 
@@ -31,6 +31,11 @@ namespace PipServices.Container
         public void SetReferences(IReferences references)
         {
             _logger.SetReferences(references);
+        }
+
+        public bool IsOpened()
+        {
+            return _timer.IsStarted;
         }
 
         public Task OpenAsync(string correlationId)

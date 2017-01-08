@@ -1,6 +1,6 @@
 # IoC container for Pip.Services in .NET Changelog
 
-## <a name="1.0.1-1.0.8"></a> 1.0.1-1.0.8 (2016-11-21)
+## <a name="1.0.1-1.0.12"></a> 1.0.1-1.0.12 (2017-01-07)
 
 ### Bug Fixes
 * Added documentation

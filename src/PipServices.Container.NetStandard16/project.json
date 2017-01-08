@@ -13,7 +13,7 @@
 
   "dependencies": {
     "NETStandard.Library": "1.6.1",
-    "PipServices.Commons": "1.0.39",
+    "PipServices.Commons": "1.0.40",
     "System.Runtime.Loader": "4.3.0",
     "System.Threading.Thread": "4.3.0"
   },

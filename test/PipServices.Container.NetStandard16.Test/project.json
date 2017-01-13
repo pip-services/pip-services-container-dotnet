@@ -9,7 +9,7 @@
       "version": "1.0.1"
     },
     "PipServices.Container.NetStandard16": "1.0.0",
-    "PipServices.Commons": "1.0.40"  },
+    "PipServices.Commons": "1.0.40" },
 
   "frameworks": {
     "netcoreapp1.0": {

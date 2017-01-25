@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>PipServices.Container</id>
-    <version>1.0.14</version>
+    <version>1.0.15</version>
     <title>PipServices.Container</title>
     <authors>Sergey Seroukhov, Volodymyr Tkachenko</authors>
 
@@ -17,14 +17,14 @@
     <tags>pip-services microservices framework</tags>
 
     <dependencies>
-      <group targetFramework="net">
-        <dependency id="PipServices.Commons" version="1.0.40" />
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="PipServices.Commons" version="1.0.43" />
       </group>
-      <group targetFramework="netstandard">
-        <dependency id="NETStandard.Library" version="1.6.1" />
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="NETStandard.Library" version="1.6.0" />
         <dependency id="System.Runtime.Loader" version="4.3.0" />
         <dependency id="System.Threading.Thread" version="4.3.0" />
-        <dependency id="PipServices.Commons" version="1.0.40" />
+        <dependency id="PipServices.Commons" version="1.0.43" />
       </group>
     </dependencies>
   </metadata>

@@ -1,5 +1,5 @@
 {
-  "version": "1.0.14",
+  "version": "1.0.17",
 
   "copyright": "Copyright © Conceptual Vision Consulting LLC. 2016",
   "title": "IoC container for Pip.Services",
@@ -13,7 +13,7 @@
 
   "dependencies": {
     "NETStandard.Library": "1.6.0",
-    "PipServices.Commons": "1.0.43",
+    "PipServices.Commons": "1.0.44",
     "System.Runtime.Loader": "4.3.0",
     "System.Threading.Thread": "4.3.0"
   },

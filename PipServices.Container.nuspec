@@ -1,34 +1,30 @@
 <?xml version="1.0"?>
-<package >
+<package>
   <metadata>
     <id>PipServices.Container</id>
-    <version>1.0.16</version>
+    <version>1.0.17</version>
     <title>PipServices.Container</title>
     <authors>Sergey Seroukhov, Volodymyr Tkachenko</authors>
-
     <projectUrl>https://github.com/pip-services/pip-services-container-dotnet</projectUrl>
     <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
     <iconUrl>https://raw.githubusercontent.com/pip-services/pip-services/master/design/Icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-
     <description>General-purpose component container for Pip.Services in .NET</description>
     <releaseNotes>Pre release</releaseNotes>
     <copyright>Conceptual Vision Consulting LLC. 2016</copyright>
     <tags>pip-services microservices framework</tags>
-
     <dependencies>
       <group targetFramework=".NETFramework4.5">
-        <dependency id="PipServices.Commons" version="1.0.43" />
+        <dependency id="PipServices.Commons" version="1.0.44" />
       </group>
       <group targetFramework=".NETStandard1.3">
         <dependency id="NETStandard.Library" version="1.6.0" />
         <dependency id="System.Runtime.Loader" version="4.3.0" />
         <dependency id="System.Threading.Thread" version="4.3.0" />
-        <dependency id="PipServices.Commons" version="1.0.43" />
+        <dependency id="PipServices.Commons" version="1.0.44" />
       </group>
     </dependencies>
   </metadata>
-
   <files>
     <file src="src\PipServices.Container.NetStandard16\bin\Release\netstandard1.6\PipServices.Container.deps.json" target="lib\netstandard1.6" />
     <file src="src\PipServices.Container.NetStandard16\bin\Release\netstandard1.6\PipServices.Container.dll" target="lib\netstandard1.6" />

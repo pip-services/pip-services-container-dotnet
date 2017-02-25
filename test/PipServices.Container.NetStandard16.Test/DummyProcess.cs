@@ -11,7 +11,7 @@ namespace PipServices.Container
             base.InitReferences(references);
 
             // Factory to statically resolve dummy components
-            references.Put(new DummyFactory());
+            references.Put(DummyFactory.Descriptor, new DummyFactory());
         }
 
         public Task RunAsync(string[] args, CancellationToken token)

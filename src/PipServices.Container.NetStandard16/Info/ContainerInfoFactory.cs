@@ -3,14 +3,10 @@ using PipServices.Commons.Refer;
 
 namespace PipServices.Container.Info
 {
-    public sealed class ContainerInfoFactory : IFactory, IDescriptable
+    public sealed class ContainerInfoFactory : IFactory
     {
-        private static readonly Descriptor _descriptor = new Descriptor("pip-services-container", "factory", "container-info", "default", "1.0");
-
-        public Descriptor GetDescriptor()
-        {
-            return _descriptor;
-        }
+        public static readonly Descriptor Descriptor = new Descriptor("pip-services-container", "factory", "container-info", "default", "1.0");
+        public static Descriptor ContainerInfoDescriptor = new Descriptor("pip-services-container", "container-info", "default", "*", "1.0");
 
         public bool CanCreate(object locator)
         {
@@ -19,7 +15,7 @@ namespace PipServices.Container.Info
             if (descriptor == null)
                 return false;
 
-            if (descriptor.Match(ContainerInfo.Descriptor))
+            if (descriptor.Match(ContainerInfoDescriptor))
                 return true;
 
             return false;
@@ -32,7 +28,7 @@ namespace PipServices.Container.Info
             if (descriptor == null)
                 return null;
 
-            if (descriptor.Match(ContainerInfo.Descriptor))
+            if (descriptor.Match(ContainerInfoDescriptor))
                 return new ContainerInfo();
 
             return null;

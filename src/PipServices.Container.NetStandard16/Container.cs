@@ -34,7 +34,7 @@ namespace PipServices.Container
         protected virtual void InitReferences(IReferences references)
         {
             // Override in base classes
-            references.Put(new DefaultContainerFactory());
+            references.Put(DefaultContainerFactory.Descriptor, new DefaultContainerFactory());
         }
 
         public async Task StartAsync(string correlationId, CancellationToken token)

@@ -3,14 +3,9 @@ using PipServices.Commons.Refer;
 
 namespace PipServices.Container
 {
-    public class DummyFactory : IFactory, IDescriptable
+    public class DummyFactory : IFactory
     {
         public static Descriptor Descriptor { get; } = new Descriptor("pip-services-dummies", "factory", "default", "default", "1.0");
-
-        public Descriptor GetDescriptor()
-        {
-            return Descriptor;
-        }
 
         public bool CanCreate(object locator)
         {

@@ -37,8 +37,8 @@
       <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PipServices.Commons, Version=1.0.29.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PipServices.Commons.1.0.44\lib\net45\PipServices.Commons.dll</HintPath>
+    <Reference Include="PipServices.Commons, Version=1.0.45.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PipServices.Commons.2.0.1\lib\net45\PipServices.Commons.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -76,8 +76,23 @@
     <Compile Include="..\PipServices.Container.Netstandard16\Info\ContainerInfoFactory.cs">
       <Link>Info\ContainerInfoFactory.cs</Link>
     </Compile>
+    <Compile Include="..\PipServices.Container.NetStandard16\Refer\BuildReferencesDecorator.cs">
+      <Link>Refer\BuildReferencesDecorator.cs</Link>
+    </Compile>
     <Compile Include="..\PipServices.Container.NetStandard16\Refer\ContainerReferences.cs">
       <Link>Refer\ContainerReferences.cs</Link>
+    </Compile>
+    <Compile Include="..\PipServices.Container.NetStandard16\Refer\LinkReferencesDecorator.cs">
+      <Link>Refer\LinkReferencesDecorator.cs</Link>
+    </Compile>
+    <Compile Include="..\PipServices.Container.NetStandard16\Refer\ManagedReferences.cs">
+      <Link>Refer\ManagedReferences.cs</Link>
+    </Compile>
+    <Compile Include="..\PipServices.Container.NetStandard16\Refer\ReferencesDecorator.cs">
+      <Link>Refer\ReferencesDecorator.cs</Link>
+    </Compile>
+    <Compile Include="..\PipServices.Container.NetStandard16\Refer\RunReferencesDecorator.cs">
+      <Link>Refer\RunReferencesDecorator.cs</Link>
     </Compile>
     <Compile Include="ProcessContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

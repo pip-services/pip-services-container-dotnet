@@ -48,10 +48,7 @@ namespace PipServices.Container.Refer
                     }
 
                     // Add component to the list
-                    if (component is ILocateable || component is IDescriptable)
-                        _references.Put(component);
-                    else
-                        _references.Put(component, locator);
+                    _references.Put(locator, component);
 
                     // Configure component
                     var configurable = component as IConfigurable;

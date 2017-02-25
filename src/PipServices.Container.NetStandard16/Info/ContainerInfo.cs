@@ -6,17 +6,10 @@ using PipServices.Commons.Refer;
 
 namespace PipServices.Container.Info
 {
-    public sealed class ContainerInfo : IDescriptable
+    public sealed class ContainerInfo
     {
-        public static Descriptor Descriptor = new Descriptor("pip-services-container", "container-info", "default", "default", "1.0");
-
         private string _name = "unknown";
         private StringValueMap _properties = new StringValueMap();
-
-        public Descriptor GetDescriptor()
-        {
-            return Descriptor;
-        }
 
         [JsonProperty("name")]
         public string Name

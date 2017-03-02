@@ -15,14 +15,14 @@ namespace PipServices.Container.Refer
 
         public bool BuildEnabled { get; set; }
 
-        private IFactory FindFactory(object locator)
+        public IFactory FindFactory(object locator)
         {
             foreach (var component in GetAll())
             {
                 var factory = component as IFactory;
                 if (factory != null)
                 {
-                    if (factory.CanCreate(locator))
+                    if (factory.CanCreate(locator) != null)
                         return factory;
                 }
             }
@@ -30,10 +30,9 @@ namespace PipServices.Container.Refer
             return null;
         }
 
-        public object Create(object locator)
+        public object Create(object locator, IFactory factory)
         {
             // Find factory
-            var factory = FindFactory(locator);
             if (factory == null) return null;
 
             try
@@ -47,24 +46,48 @@ namespace PipServices.Container.Refer
             }
         }
 
+        public object ClarifyLocator(object locator, IFactory factory)
+        {
+            if (factory == null) return locator;
+            if (!(locator is Descriptor)) return locator;
+
+            object anotherLocator = factory.CanCreate(locator);
+            if (anotherLocator == null) return locator;
+            if (!(anotherLocator is Descriptor)) return locator;
+
+            Descriptor descriptor = (Descriptor)locator;
+            Descriptor anotherDescriptor = (Descriptor)anotherLocator;
+
+            return new Descriptor(
+                descriptor.Group != null ? descriptor.Group : anotherDescriptor.Group,
+                descriptor.Type != null ? descriptor.Type : anotherDescriptor.Type,
+                descriptor.Kind != null ? descriptor.Kind : anotherDescriptor.Kind,
+                descriptor.Name != null ? descriptor.Name : anotherDescriptor.Name,
+                descriptor.Version != null ? descriptor.Version : anotherDescriptor.Version
+            );
+        }
+
         public override List<T> Find<T>(ReferenceQuery query, bool required)
         {
             var components = base.Find<T>(query, false);
+            var locator = query.Locator;
 
             // Try to create component
             if (components.Count == 0 && BuildEnabled)
             {
-                var component = Create(query.Locator);
+                var factory = FindFactory(locator);
+                var component = Create(locator, factory);
                 if (component is T)
                 {
-                    ParentReferences.Put(query.Locator, component);
+                    locator = ClarifyLocator(locator, factory);
+                    ParentReferences.Put(locator, component);
                     components.Add((T)component);
                 }
             }
 
             // Throw exception is no required components found
             if (required && components.Count == 0)
-                throw new ReferenceException(query.Locator);
+                throw new ReferenceException(locator);
 
             return components;
         }

@@ -8,8 +8,6 @@ namespace PipServices.Container
 {
     public sealed class DummyController : IReferenceable, IReconfigurable, IOpenable, INotifiable
     {
-        public static Descriptor Descriptor { get; } = new Descriptor("pip-services-dummies", "controller", "default", "default", "1.0");
-
         private readonly FixedRateTimer _timer;
         private readonly CompositeLogger _logger = new CompositeLogger();
         public string Message { get; private set; } = "Hello World!";

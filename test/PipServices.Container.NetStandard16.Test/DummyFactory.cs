@@ -3,34 +3,14 @@ using PipServices.Commons.Refer;
 
 namespace PipServices.Container
 {
-    public class DummyFactory : IFactory
+    public class DummyFactory : Factory
     {
-        public static Descriptor Descriptor { get; } = new Descriptor("pip-services-dummies", "factory", "default", "default", "1.0");
+        public static Descriptor Descriptor = new Descriptor("pip-services-dummies", "factory", "default", "default", "1.0");
+        public static Descriptor ControllerDescriptor = new Descriptor("pip-services-dummies", "controller", "*", "*", "1.0");
 
-        public bool CanCreate(object locator)
+        public DummyFactory()
         {
-            var descriptor = locator as Descriptor;
-
-            if (descriptor == null)
-                return false;
-
-            if (descriptor.Match(DummyController.Descriptor))
-                return true;
-
-            return false;
-        }
-
-        public object Create(object locator)
-        {
-            var descriptor = locator as Descriptor;
-
-            if (descriptor == null)
-                return null;
-
-            if (descriptor.Match(DummyController.Descriptor))
-                return new DummyController();
-
-            return null;
-        }
+            RegisterAsType(ControllerDescriptor, typeof(DummyController));
+	    }
     }
 }

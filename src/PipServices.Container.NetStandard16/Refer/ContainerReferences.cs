@@ -10,14 +10,6 @@ namespace PipServices.Container.Refer
 {
     public sealed class ContainerReferences : ManagedReferences
     {
-        private object CreateStatically(object locator)
-        {
-            var component = _builder.Create(locator);
-            if (component == null)
-                throw new ReferenceException(null, locator);
-            return component;
-        }
-
         public void PutFromConfig(ContainerConfig config)
         {
             foreach (var componentConfig in config)
@@ -37,7 +29,11 @@ namespace PipServices.Container.Refer
                     else if (componentConfig.Descriptor != null)
                     {
                         locator = componentConfig.Descriptor;
-                        component = CreateStatically(componentConfig.Descriptor);
+                        IFactory factory = _builder.FindFactory(locator);
+                        component = _builder.Create(locator, factory);
+                        if (component == null)
+                            throw new ReferenceException(null, locator);
+                        locator = _builder.ClarifyLocator(locator, factory);
                     }
 
                     // Check that component was created

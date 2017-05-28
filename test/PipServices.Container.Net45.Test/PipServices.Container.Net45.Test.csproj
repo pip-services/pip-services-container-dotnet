@@ -43,8 +43,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="PipServices.Commons, Version=1.0.45.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PipServices.Commons.2.0.3\lib\net45\PipServices.Commons.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\packages\PipServices.Commons.2.0.4\lib\net45\PipServices.Commons.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

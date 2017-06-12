@@ -1,6 +1,6 @@
 # IoC container for Pip.Services in .NET Changelog
 
-## <a name="2.0.0"></a> 2.0.0 (2017-02-24)
+## <a name="2.0.0-2.0.2"></a> 2.0.0-2.0.2 (2017-06-12)
 
 ### Features
 * Moved **ManagedReferences** from **pip-services-commons**

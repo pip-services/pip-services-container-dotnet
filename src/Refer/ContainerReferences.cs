@@ -48,14 +48,12 @@ namespace PipServices.Container.Refer
 
                     // Configure component
                     var configurable = component as IConfigurable;
-
                     configurable?.Configure(componentConfig.Config);
 
                     // Set references to factories
                     if (component is IFactory)
                     {
                         var referenceable = component as IReferenceable;
-
                         referenceable?.SetReferences(this);
                     }
                 }

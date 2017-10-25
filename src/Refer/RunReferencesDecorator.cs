@@ -1,26 +1,48 @@
 ﻿using PipServices.Commons.Refer;
 using PipServices.Commons.Run;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace PipServices.Container.Refer
 {
-    public class RunReferencesDecorator : ReferencesDecorator
+    public class RunReferencesDecorator : ReferencesDecorator, IOpenable
     {
+        private bool _opened = false;
+
         public RunReferencesDecorator(IReferences baseReferences = null, IReferences parentReferences = null)
             : base(baseReferences, parentReferences)
+        { }
+
+        public bool IsOpened()
         {
-            OpenEnabled = true;
-            CloseEnabled = true;
+            return _opened;    
         }
 
-        public bool OpenEnabled { get; set; }
-        public bool CloseEnabled { get; set; }
+        public async Task OpenAsync(string correlationId)
+        {
+            if (!_opened)
+            {
+                var components = base.GetAll();
+                await Opener.OpenAsync(correlationId, components);
+                _opened = true;
+            }
+        }
+
+        public async Task CloseAsync(string correlationId)
+        {
+            if (_opened)
+            {
+                var components = base.GetAll();
+                await Closer.CloseAsync(correlationId, components);
+                _opened = false;
+            }
+        }
 
         public override void Put(object locator, object component)
         {
             base.Put(locator, component);
 
-            if (OpenEnabled)
+            if (_opened)
                 Opener.OpenOneAsync(null, component).Wait();
         }
 
@@ -28,7 +50,7 @@ namespace PipServices.Container.Refer
         {
             var component = base.Remove(locator);
 
-            if (CloseEnabled)
+            if (_opened)
                 Closer.CloseOneAsync(null, component).Wait();
 
             return component;
@@ -38,7 +60,7 @@ namespace PipServices.Container.Refer
         {
             var components = base.RemoveAll(locator);
 
-            if (CloseEnabled)
+            if (_opened)
                 Closer.CloseAsync(null, components).Wait();
 
             return components;

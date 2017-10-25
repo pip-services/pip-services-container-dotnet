@@ -6,10 +6,16 @@ using PipServices.Commons.Refer;
 
 namespace PipServices.Container.Info
 {
-    public sealed class ContainerInfo
+    public sealed class ContainerInfo : IReconfigurable
     {
         private string _name = "unknown";
         private StringValueMap _properties = new StringValueMap();
+
+        public ContainerInfo(string name = null, string description = null)
+        {
+            _name = name ?? "unknown";
+            Description = description;
+        }
 
         [JsonProperty("name")]
         public string Name
@@ -25,8 +31,16 @@ namespace PipServices.Container.Info
         public string ContainerId { get; set; } = IdGenerator.NextLong();
 
         [JsonProperty("start_time")]
-        public DateTimeOffset StartTime { get; set; } = DateTimeOffset.UtcNow;
+        public DateTime StartTime { get; set; } = DateTime.UtcNow;
 
+        [JsonProperty("uptime")]
+        public long Uptime
+        {
+            get 
+            {
+                return DateTime.UtcNow.Ticks - StartTime.Ticks;
+            }
+        }
 
         [JsonProperty("properties")]
         public StringValueMap Properties
@@ -35,16 +49,21 @@ namespace PipServices.Container.Info
             set { _properties = value ?? new StringValueMap(); }
         }
 
+        public void Configure(ConfigParams config)
+        {
+            Name = config.GetAsStringWithDefault("name", Name);
+            Name = config.GetAsStringWithDefault("info.name", Name);
+
+            Description = config.GetAsStringWithDefault("description", Description);
+            Description = config.GetAsStringWithDefault("info.description", Description);
+
+            Properties = config.GetSection("properties");
+        }
+
         public static ContainerInfo FromConfig(ConfigParams config)
         {
             var result = new ContainerInfo();
-
-            var info = config.GetSection("info");
-
-            result.Name = info.GetAsNullableString("name");
-            result.Description = info.GetAsNullableString("description");
-            result.Properties = config.GetSection("properties");
-
+            result.Configure(config);
             return result;
         }
     }

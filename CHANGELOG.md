@@ -1,5 +1,11 @@
 # IoC container for Pip.Services in .NET Changelog
 
+## <a name="2.1.0"></a> 2.1.0 (2017-10-24)
+
+### Features
+* Converted to new project structure
+* Dockerized build and test
+
 ## <a name="2.0.0-2.0.2"></a> 2.0.0-2.0.2 (2017-06-12)
 
 ### Features

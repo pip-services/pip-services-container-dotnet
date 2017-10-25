@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace PipServices.Container.Refer
 {
-    public class ManagedReferences: ReferencesDecorator, IOpenable, IClosable
+    public class ManagedReferences: ReferencesDecorator, IOpenable
     {
         protected References _references;
         protected BuildReferencesDecorator _builder;
@@ -12,6 +12,7 @@ namespace PipServices.Container.Refer
         protected RunReferencesDecorator _runner;
 
         public ManagedReferences(object[] tuples = null)
+            : base(null, null)
         {
             _references = new References(tuples);
             _builder = new BuildReferencesDecorator(_references, this);
@@ -23,15 +24,13 @@ namespace PipServices.Container.Refer
 
         public bool IsOpened()
         {
-            var components = _references.GetAll();
-            return Opener.IsOpened(components);
+            return _linker.IsOpened() && _runner.IsOpened();
         }
 
         public async Task OpenAsync(string correlationId)
         {
-            var components = _references.GetAll();
-            Referencer.SetReferences(this, components);
-            await Opener.OpenAsync(correlationId, components);
+            await _linker.OpenAsync(correlationId);
+            await _runner.OpenAsync(correlationId);
         }
 
         /// <summary>
@@ -41,11 +40,8 @@ namespace PipServices.Container.Refer
         /// <returns>Task.</returns>
         public async Task CloseAsync(string correlationId)
         {
-            var components = _references.GetAll();
-            await Closer.CloseAsync(correlationId, components);
-            Referencer.UnsetReferences(components);
-
-            _references.Clear();
+            await _runner.CloseAsync(correlationId);
+            await _linker.CloseAsync(correlationId);
         }
 
         public static ManagedReferences FromTyples(params object[] tuples)

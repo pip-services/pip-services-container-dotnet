@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Threading;
 using System.Threading.Tasks;
+using PipServices.Commons.Config;
 using PipServices.Commons.Errors;
 using PipServices.Commons.Log;
 using PipServices.Commons.Refer;
@@ -12,84 +12,107 @@ using PipServices.Container.Refer;
 
 namespace PipServices.Container
 {
-    public class Container
+    public class Container: IConfigurable, IReferenceable, IUnreferenceable, IOpenable
     {
-        public Container() { }
+        protected ILogger _logger = new NullLogger();
+        protected DefaultContainerFactory _factories = new DefaultContainerFactory();
+        protected ContainerInfo _info;
+        protected ContainerConfig _config;
+        protected ContainerReferences _references;
 
-        public Container(ContainerConfig config)
+        public Container(string name = null, string description = null) 
         {
-            Config = config;
+            _info = new ContainerInfo(name, description);
         }
 
-        protected ILogger Logger = new NullLogger();
-        public ContainerInfo Info { get; protected set; } = new ContainerInfo();
-        public ContainerConfig Config { get; set; }
-        public ContainerReferences References { get; protected set; } = new ContainerReferences();
-
-        public void ReadConfigFromFile(string correlationId, string path)
+        public virtual void Configure(ConfigParams config)
         {
-            Config = ContainerConfigReader.ReadFromFile(correlationId, path);
+            _config = ContainerConfig.FromConfig(config);
+        }
+
+        public void ReadConfigFromFile(string correlationId, string path, ConfigParams parameters)
+        {
+            _config = ContainerConfigReader.ReadFromFile(correlationId, path, parameters);
+        }
+
+        public virtual void SetReferences(IReferences references)
+        {
+            // Override in child class
+        }
+
+        public virtual void UnsetReferences()
+        {
+            // Override in child class
         }
 
         protected virtual void InitReferences(IReferences references)
         {
             // Override in base classes
-            references.Put(DefaultContainerFactory.Descriptor, new DefaultContainerFactory());
+            references.Put(ContainerInfoFactory.ContainerInfoDescriptor, _info);
+            references.Put(DefaultContainerFactory.Descriptor, _factories);
         }
 
-        public async Task StartAsync(string correlationId, CancellationToken token)
+        public virtual bool IsOpened()
         {
-            if (Config == null)
-                throw new InvalidStateException(correlationId, "NO_CONFIG", "Container was not configured");
+            return _references != null;
+        }
+
+        public async Task OpenAsync(string correlationId)
+        {
+            if (_references != null)
+                throw new InvalidStateException(correlationId, "ALREADY_OPENED", "Container was already opened");
+
+            //if (_config == null)
+            //    throw new InvalidStateException(correlationId, "NO_CONFIG", "Container was not configured");
 
             try
             {
-                Logger.Trace(correlationId, "Starting container.");
+                _logger.Trace(correlationId, "Starting container.");
 
                 // Create references with configured components
-                InitReferences(References);
-                References.PutFromConfig(Config);
+                _references = new ContainerReferences();
+                InitReferences(_references);
+                _references.PutFromConfig(_config);
+                SetReferences(_references);
 
-                // Reference and open components
-                var components = References.GetAll();
-                Referencer.SetReferences(References, components);
-                await Opener.OpenAsync(correlationId, References.GetAll());
+                // Get custom description if available
+                var infoDescriptor = new Descriptor("*", "container-info", "*", "*", "*");
+                _info = (ContainerInfo)_references.GetOneRequired(infoDescriptor);
+
+                await _references.OpenAsync(correlationId);
 
                 // Get reference to logger
-                Logger = new CompositeLogger(References);
-
-                // Get reference to container info
-                var infoDescriptor = new Descriptor("*", "container-info", "*", "*", "*");
-                Info = (ContainerInfo) References.GetOneRequired(infoDescriptor);
-
-                Logger.Info(correlationId, "Container {0} started.", Info.Name);
+                _logger = new CompositeLogger(_references);
+                _logger.Info(correlationId, "Container {0} started.", _info.Name);
             }
             catch (Exception ex)
             {
-                References = null;
-                Logger.Error(correlationId, ex, "Failed to start container");
+                _logger.Error(correlationId, ex, "Failed to start container");
+
+                await CloseAsync(correlationId);
 
                 throw;
             }
         }
 
-        public async Task StopAsync(string correlationId, CancellationToken token)
+        public async Task CloseAsync(string correlationId)
         {
-            if (References == null)
-                throw new InvalidStateException(correlationId, "NO_STARTED", "Container was not started");
+            if (_references == null)
+                return;
 
             try
             {
-                Logger.Trace(correlationId, "Stopping {0} container", Info.Name);
+                _logger.Trace(correlationId, "Stopping {0} container", _info.Name);
 
-                // Close and deference components
-                await References.CloseAsync(correlationId);
+                // Close and dereference components
+                await _references.CloseAsync(correlationId);
+                _references = null;
 
-                Logger.Info(correlationId, "Container {0} stopped", Info.Name);
+                _logger.Info(correlationId, "Container {0} stopped", _info.Name);
             }
             catch (Exception ex)
             {
-                Logger.Error(correlationId, ex, "Failed to stop container");
+                _logger.Error(correlationId, ex, "Failed to stop container");
                 throw;
             }
         }

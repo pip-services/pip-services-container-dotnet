@@ -45,8 +45,8 @@ namespace PipServices.Container.Info
             Assert.Equal(containerInfo.StartTime.Year, DateTimeOffset.UtcNow.Year);
             Assert.Equal(containerInfo.StartTime.Month, DateTimeOffset.UtcNow.Month);
 
-            containerInfo.StartTime = new DateTimeOffset(1975, 4, 8, 0, 0, 0, 0, TimeSpan.Zero);
-            Assert.Equal(containerInfo.StartTime, new DateTimeOffset(1975, 4, 8, 0, 0, 0, 0, TimeSpan.Zero));
+            containerInfo.StartTime = new DateTime(1975, 4, 8, 0, 0, 0, 0);
+            Assert.Equal(containerInfo.StartTime, new DateTime(1975, 4, 8, 0, 0, 0, 0));
         }
 
         [Fact]

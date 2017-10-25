@@ -37,56 +37,56 @@ namespace PipServices.Container.Refer
 
         public virtual object GetOneOptional(object locator)
         {
-            var components = Find<object>(new ReferenceQuery(locator), false);
+            var components = Find<object>(locator, false);
             return components.Count > 0 ? components[0] : null;
         }
 
         public virtual T GetOneOptional<T>(object locator)
         {
-            var components = Find<T>(new ReferenceQuery(locator), false);
+            var components = Find<T>(locator, false);
             return components.Count > 0 ? components[0] : default(T);
         }
 
         public virtual object GetOneRequired(object locator)
         {
-            var components = Find<object>(new ReferenceQuery(locator), true);
+            var components = Find<object>(locator, true);
             return components.Count > 0 ? components[0] : null;
         }
 
         public virtual T GetOneRequired<T>(object locator)
         {
-            var components = Find<T>(new ReferenceQuery(locator), true);
+            var components = Find<T>(locator, true);
             return components.Count > 0 ? components[0] : default(T);
         }
 
         public virtual List<object> GetOptional(object locator)
         {
-            return Find<object>(new ReferenceQuery(locator), false);
+            return Find<object>(locator, false);
         }
 
         public virtual List<T> GetOptional<T>(object locator)
         {
-            return Find<T>(new ReferenceQuery(locator), false);
+            return Find<T>(locator, false);
         }
 
         public virtual List<object> GetRequired(object locator)
         {
-            return Find<object>(new ReferenceQuery(locator), true);
+            return Find<object>(locator, true);
         }
 
         public virtual List<T> GetRequired<T>(object locator)
         {
-            return Find<T>(new ReferenceQuery(locator), true);
+            return Find<T>(locator, true);
         }
 
-        public virtual List<object> Find(ReferenceQuery query, bool required)
+        public virtual List<object> Find(object locator, bool required)
         {
-            return Find<object>(query, required);
+            return Find<object>(locator, required);
         }
 
-        public virtual List<T> Find<T>(ReferenceQuery query, bool required)
+        public virtual List<T> Find<T>(object locator, bool required)
         {
-            return BaseReferences.Find<T>(query, required);
+            return BaseReferences.Find<T>(locator, required);
         }
 
     }

@@ -9,11 +9,7 @@ namespace PipServices.Container.Refer
     {
         public BuildReferencesDecorator(IReferences baseReferences = null, IReferences parentReferences = null)
             : base(baseReferences, parentReferences)
-        {
-            BuildEnabled = true;
-        }
-
-        public bool BuildEnabled { get; set; }
+        { }
 
         public IFactory FindFactory(object locator)
         {
@@ -67,13 +63,12 @@ namespace PipServices.Container.Refer
             );
         }
 
-        public override List<T> Find<T>(ReferenceQuery query, bool required)
+        public override List<T> Find<T>(object locator, bool required)
         {
-            var components = base.Find<T>(query, false);
-            var locator = query.Locator;
+            var components = base.Find<T>(locator, false);
 
             // Try to create component
-            if (components.Count == 0 && BuildEnabled)
+            if (components.Count == 0)
             {
                 var factory = FindFactory(locator);
                 var component = Create(locator, factory);

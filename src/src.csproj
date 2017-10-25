@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>PipServices.Container</AssemblyName>
+    <RootNamespace>PipServices.Container</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="PipServices.Commons" Version="2.2.0" />
+  </ItemGroup>
 </Project>

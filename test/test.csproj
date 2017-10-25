@@ -2,8 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-
     <IsPackable>false</IsPackable>
+
+    <AssemblyName>PipServices.Container.Test</AssemblyName>
+    <RootNamespace>PipServices.Container</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,4 +14,7 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\src\src.csproj" />
+  </ItemGroup>
 </Project>

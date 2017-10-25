@@ -1,12 +1,23 @@
 ﻿using System;
+using System.Threading;
 
-namespace example
+namespace PipServices.Container
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            try
+            {
+                var process = new DummyProcess();
+                process.RunAsync(args).Wait();
+
+                Console.ReadLine();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
     }
 }

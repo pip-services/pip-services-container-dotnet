@@ -1,0 +1,10 @@
+﻿using System;
+namespace PipServices.Container
+{
+	public class dummy
+	{
+		public dummy()
+		{
+		}
+	}
+}

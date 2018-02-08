@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <AssemblyName>PipServices.Dummy.Application.NetStandard16</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>PipServices.Dummy.Application.NetStandard16</PackageId>
+    <RuntimeFrameworkVersion>1.0.4</RuntimeFrameworkVersion>
+    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\test\PipServices.Container.NetStandard16.Test\PipServices.Container.NetStandard16.Test.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PipServices.Commons" Version="1.0.46" />
+  </ItemGroup>
+
+</Project>

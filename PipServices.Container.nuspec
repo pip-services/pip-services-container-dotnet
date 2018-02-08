@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>PipServices.Container</id>
-    <version>1.0.18</version>
+    <version>1.0.19</version>
     <title>PipServices.Container</title>
     <authors>Sergey Seroukhov, Volodymyr Tkachenko</authors>
     <projectUrl>https://github.com/pip-services/pip-services-container-dotnet</projectUrl>
@@ -12,16 +12,18 @@
     <description>General-purpose component container for Pip.Services in .NET</description>
     <releaseNotes>Pre release</releaseNotes>
     <copyright>Conceptual Vision Consulting LLC. 2018</copyright>
-    <tags>pip-services microservices framework v1.0.18</tags>
+    <tags>pip-services microservices framework</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.5">
-        <dependency id="PipServices.Commons" version="1.0.46" />
+        <dependency id="PipServices.Commons" version="1.0.47" />
+        <dependency id="Newtonsoft.Json" version="10.0.1" />
       </group>
       <group targetFramework=".NETStandard1.6">
         <dependency id="NETStandard.Library" version="1.6.0" />
         <dependency id="System.Runtime.Loader" version="4.3.0" />
         <dependency id="System.Threading.Thread" version="4.3.0" />
-        <dependency id="PipServices.Commons" version="1.0.44" />
+        <dependency id="PipServices.Commons" version="1.0.47" />
+        <dependency id="Newtonsoft.Json" version="10.0.1" />
       </group>
     </dependencies>
   </metadata>

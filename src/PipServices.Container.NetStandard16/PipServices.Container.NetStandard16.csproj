@@ -4,7 +4,7 @@
     <Description>General-purpose component container for Pip.Services in Core.NET</Description>
     <Copyright>Copyright © Conceptual Vision Consulting LLC. 2018</Copyright>
     <AssemblyTitle>IoC container for Pip.Services</AssemblyTitle>
-    <VersionPrefix>1.0.18</VersionPrefix>
+    <VersionPrefix>1.0.19</VersionPrefix>
     <Authors>Sergey Seroukhov;Volodymyr Tkachenko</Authors>
     <TargetFramework>netstandard1.6</TargetFramework>
     <DefineConstants>$(DefineConstants);CORE_NET</DefineConstants>
@@ -18,7 +18,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="PipServices.Commons" Version="1.0.46" />
+    <PackageReference Include="PipServices.Commons" Version="1.0.47" />
     <PackageReference Include="System.Runtime.Loader" Version="4.3.0" />
     <PackageReference Include="System.Threading.Thread" Version="4.3.0" />
   </ItemGroup>

@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="PipServices.Commons" Version="1.0.47" />
+    <PackageReference Include="PipServices.Commons" Version="1.0.48" />
   </ItemGroup>
 
 </Project>

@@ -15,7 +15,7 @@
     <tags>pip-services microservices framework</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.5">
-        <dependency id="PipServices.Commons" version="1.0.47" />
+        <dependency id="PipServices.Commons" version="1.0.49" />
         <dependency id="Newtonsoft.Json" version="10.0.3" />
       </group>
       <group targetFramework=".NETStandard1.6">

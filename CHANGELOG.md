@@ -1,6 +1,6 @@
 # IoC container for Pip.Services in .NET Changelog
 
-## <a name="1.0.18-1.0.21"></a> 1.0.18-1.0.21 (2018-02-08)
+## <a name="1.0.18-1.0.22"></a> 1.0.18-1.0.22 (2018-02-08)
 * Released to separate branch "master-1.x"
 
 ## <a name="1.0.1-1.0.16"></a> 1.0.1-1.0.16 (2017-01-25)

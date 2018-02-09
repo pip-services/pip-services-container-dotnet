@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>PipServices.Container</id>
-    <version>1.0.20</version>
+    <version>1.0.21</version>
     <title>PipServices.Container</title>
     <authors>Sergey Seroukhov, Volodymyr Tkachenko</authors>
     <projectUrl>https://github.com/pip-services/pip-services-container-dotnet</projectUrl>
@@ -22,7 +22,7 @@
         <dependency id="NETStandard.Library" version="1.6.0" />
         <dependency id="System.Runtime.Loader" version="4.3.0" />
         <dependency id="System.Threading.Thread" version="4.3.0" />
-        <dependency id="PipServices.Commons" version="1.0.48" />
+        <dependency id="PipServices.Commons" version="1.0.49" />
         <dependency id="Newtonsoft.Json" version="10.0.3" />
       </group>
     </dependencies>

@@ -15,7 +15,7 @@
     <tags>pip-services microservices framework</tags>
     <dependencies>
       <group targetFramework=".NETStandard2.0">
-        <dependency id="PipServices.Commons" version="2.2.0" />
+        <dependency id="PipServices.Commons" version="2.2.3" />
       </group>
     </dependencies>
   </metadata>

@@ -12,7 +12,7 @@ namespace PipServices.Container.Build
 {
     public class DefaultContainerFactory : CompositeFactory
     {
-        public static readonly Descriptor Descriptor = new Descriptor("pip-services-container", "factory", "container", "default", "1.0");
+        public static readonly Descriptor Descriptor = new Descriptor("pip-services", "factory", "container", "default", "1.0");
 
         public DefaultContainerFactory(params IFactory[] factories)
             : base(factories)

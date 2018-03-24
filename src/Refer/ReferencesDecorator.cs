@@ -30,6 +30,11 @@ namespace PipServices.Container.Refer
             return BaseReferences.RemoveAll(locator);
         }
 
+        public virtual List<object> GetAllLocators()
+        {
+            return BaseReferences.GetAllLocators();
+        }
+
         public virtual List<object> GetAll()
         {
             return BaseReferences.GetAll();

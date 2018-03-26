@@ -68,7 +68,7 @@ namespace PipServices.Container.Refer
             var components = base.Find<T>(locator, false);
 
             // Try to create component
-            if (components.Count == 0)
+            if (required && components.Count == 0)
             {
                 var factory = FindFactory(locator);
                 var component = Create(locator, factory);

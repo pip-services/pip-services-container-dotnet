@@ -12,7 +12,6 @@ Default container factory provides generic functionality on demand such as loggi
 - **Core** - Component container and container as a system process
 - **Build** - Container default factory
 - **Config** - Container configuration
-- **Info** - Container information component
 - **Refer** - Container references
 
 Quick Links:

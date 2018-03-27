@@ -4,9 +4,9 @@ using PipServices.Commons.Cache;
 using PipServices.Commons.Config;
 using PipServices.Commons.Connect;
 using PipServices.Commons.Count;
+using PipServices.Commons.Info;
 using PipServices.Commons.Log;
 using PipServices.Commons.Refer;
-using PipServices.Container.Info;
 
 namespace PipServices.Container.Build
 {
@@ -17,7 +17,7 @@ namespace PipServices.Container.Build
         public DefaultContainerFactory(params IFactory[] factories)
             : base(factories)
         {
-            Add(new ContainerInfoFactory());
+            Add(new InfoFactory());
             Add(new DefaultLoggerFactory());
             Add(new DefaultCountersFactory());
             Add(new DefaultConfigReaderFactory());

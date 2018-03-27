@@ -2,12 +2,12 @@
 using System.Threading.Tasks;
 using PipServices.Commons.Config;
 using PipServices.Commons.Errors;
+using PipServices.Commons.Info;
 using PipServices.Commons.Log;
 using PipServices.Commons.Refer;
 using PipServices.Commons.Run;
 using PipServices.Container.Build;
 using PipServices.Container.Config;
-using PipServices.Container.Info;
 using PipServices.Container.Refer;
 
 namespace PipServices.Container
@@ -16,13 +16,13 @@ namespace PipServices.Container
     {
         protected ILogger _logger = new NullLogger();
         protected DefaultContainerFactory _factories = new DefaultContainerFactory();
-        protected ContainerInfo _info;
+        protected ContextInfo _info;
         protected ContainerConfig _config;
         protected ContainerReferences _references;
 
         public Container(string name = null, string description = null) 
         {
-            _info = new ContainerInfo(name, description);
+            _info = new ContextInfo(name, description);
         }
 
         public virtual void Configure(ConfigParams config)
@@ -48,7 +48,7 @@ namespace PipServices.Container
         protected virtual void InitReferences(IReferences references)
         {
             // Override in base classes
-            references.Put(ContainerInfoFactory.ContainerInfoDescriptor, _info);
+            references.Put(InfoFactory.ContextInfoDescriptor, _info);
             references.Put(DefaultContainerFactory.Descriptor, _factories);
         }
 
@@ -76,8 +76,8 @@ namespace PipServices.Container
                 SetReferences(_references);
 
                 // Get custom description if available
-                var infoDescriptor = new Descriptor("*", "container-info", "*", "*", "*");
-                _info = (ContainerInfo)_references.GetOneRequired(infoDescriptor);
+                var infoDescriptor = new Descriptor("*", "context-info", "*", "*", "*");
+                _info = _references.GetOneRequired<ContextInfo>(infoDescriptor);
 
                 await _references.OpenAsync(correlationId);
 

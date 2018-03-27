@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="PipServices.Commons" Version="2.2.10" />
+    <PackageReference Include="PipServices.Commons" Version="2.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Info\ContainerInfo.cs" />
   </ItemGroup>
 </Project>

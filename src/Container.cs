@@ -47,8 +47,11 @@ namespace PipServices.Container
 
         protected virtual void InitReferences(IReferences references)
         {
-            // Override in base classes
-            references.Put(InfoFactory.ContextInfoDescriptor, _info);
+            var existingInfo = references.GetOneOptional<ContextInfo>(DefaultInfoFactory.ContextInfoDescriptor);
+            if (existingInfo == null)
+                references.Put(DefaultInfoFactory.ContextInfoDescriptor, _info);
+            else _info = existingInfo;
+
             references.Put(DefaultContainerFactory.Descriptor, _factories);
         }
 

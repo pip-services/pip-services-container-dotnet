@@ -17,7 +17,7 @@ namespace PipServices.Container.Build
         public DefaultContainerFactory(params IFactory[] factories)
             : base(factories)
         {
-            Add(new InfoFactory());
+            Add(new DefaultInfoFactory());
             Add(new DefaultLoggerFactory());
             Add(new DefaultCountersFactory());
             Add(new DefaultConfigReaderFactory());

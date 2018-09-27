@@ -1,6 +1,6 @@
 # IoC container for Pip.Services in .NET Changelog
 
-## <a name="2.2.0"></a> 2.2.0 (2018-03-26)
+## <a name="2.2.0-2.2.3"></a> 2.2.0-2.2.3 (2018-09-27)
 
 ### Features
 * ContainerInfo was replaced with ContextInfo from PipServices.Commons
